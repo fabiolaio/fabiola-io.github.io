@@ -1,0 +1,7 @@
+
+.frame-container {
+    width: 800px; /* adjust as needed */
+    height: 800px; /* adjust as needed */
+    background: url('') no-repeat;
+    padding: 20px; /* adjust as needed to align your content properly within the frame */
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Fabiola Larios</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+
+<body>
+
+    <div class="background-image"></div>
+ 
+    <div id="desktop">
+        <!-- Each icon div is a link to one of your artworks. -->
+
+        <div class="icon" data-url="bio.html">
+            <img src="icon1.png">
+            <p>Bio</p>
+        </div>
+    
+        <div id="marqueeContainer">
+            <div id="marqueeContent">My name is Fabiola Larios, on web3 my name is fabiolaio now you can understand why, yes I put my website as my web3 identity.</div>
+        </div>
+        
+        <!-- This is the window that will display the artwork. -->
+        <div id="artwork-window" class="window">
+            <div class="title-bar">
+                <p id="window-title"></p>
+                
+                <button class="close" onclick="closeWindow()">X</button>
+            </div>
+            <iframe id="artwork-frame"></iframe>
+        </div>
+    </div>
+
+    <div id="taskbar">
+        <div id="start-button">
+            <img src="windows.png" alt="Windows Logo" id="start-logo">
+            <p>Start</p>
+        </div>
+        <div id="clock"></div>
+
+        <div id="start-menu">
+            <ul>
+                <li class="start-menu-item" data-url="artwork1.html" data-title="Artwork 1">Artwork 1</li>
+                <li class="start-menu-item" data-url="artwork2.html" data-title="Artwork 2">Artwork 2</li>
+                <!-- add more list items for more artworks -->
+            </ul>
+        </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
