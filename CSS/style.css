@@ -38,14 +38,6 @@ header {
 
  }
 
- #desktop {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    grid-gap: 10px;
-    padding: 20px;
-    justify-items: center;
-}
-
 .icon {
     position: relative;
     z-index: 1;
