@@ -39,59 +39,25 @@ header {
     /* Add other styles as required */
 }
 
- #icontext {
-    color: rgb(255, 255, 255);
-    font-family: 'Arial';
-    font-size: 15px;
-    font-weight: bold;
-    margin: 0 100px;
-
- }
-
-.icon {
+.icon, .iconlink {
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin: 0 10px;
+    cursor: url(../CSS/cursor.png), auto;
+}
+
+.icon p, .iconlink p {
+    color: white;
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 15px;
     text-align: center;
-    width: 60px;
-    height: 60px;
-    cursor: url(../CSS/cursor.png), auto;
-}
-
-.iconlink {
-    position: relative;
-    z-index: 1;
-    width: 60px;
-    height: 60px;
-    cursor: url(../CSS/cursor.png), auto;
-}
-
-#iconlinktext {
-    color: rgb(255, 255, 255);
-    font-family: 'Arial';
-    font-size: 15px;
-    font-weight: bold;
-    margin: 0 100px;
-
- }
-
- .iconlink p {
-    color: white;
-    font-weight: bold;
-    margin-top: 5px; /* Adjust this value to your liking */
-
-}
-
-.icon a {
-    display: block; /* or 'flex', depending on your design */
-    text-decoration: none;
-    /* add more styles as needed */
-}
-
-.icon p {
-    color: white;
-    font-weight: bold;
-    margin-top: 5px; /* Adjust this value to your liking */
-
 }
 
 #marqueeContainer {
