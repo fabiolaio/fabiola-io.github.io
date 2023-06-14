@@ -32,8 +32,8 @@ header {
  }
 
  @font-face {
-    font-family: Compaq;
-  src: url(Compaq_Port3.woff);
+    font-family: 'Compaq';
+  src: url(../Compaq_Port3.woff);
 }
   
 
