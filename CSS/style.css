@@ -190,6 +190,22 @@ header {
     height: 30px;
 }
 
+#start-button {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    font-family: 'Compaq';
+    font-weight: bold;
+    padding: 0px 2px;
+    height: 30px;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #ffffff #000000 #000000 #ffffff; /* top, right, bottom, left */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* add 3D effect */
+    background-color: rgb(240, 113, 197);
+    outline: none;
+}
+
 #start-logo {
     width: 20px;
     height: 20px;
@@ -197,8 +213,9 @@ header {
 }
 
 .start-text {
-    color: #000; /* you can change the color as you need */
-    font-size: 14px; /* you can adjust the font size as you need */
+    color: #000000;
+    font-family: 'Compaq';
+    font-weight: bold;
 }
 
 #start-menu {
