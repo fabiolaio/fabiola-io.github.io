@@ -106,7 +106,6 @@ header {
     border: none;
 }
 
-
 .title-bar {
     display: flex;
     justify-content: space-between;
@@ -161,6 +160,11 @@ header {
     border-color: #ffffff #000000 #000000 #ffffff; /* top, right, bottom, left */
     padding: 0px 2px;
     height: 30px;
+}
+
+.start-menu ul li:hover, .start-menu ul li:active {
+    background-color: white;
+    color: black;
 }
 
 #start-logo {
