@@ -48,12 +48,27 @@ header {
 }
 
 .iconlink {
+    position: relative;
     z-index: 1;
     width: 60px;
     height: 60px;
-    position: relative;
-    z-index: 1;
     cursor: url(../CSS/cursor.png), auto;
+}
+
+#iconlinktext {
+    color: rgb(255, 255, 255);
+    font-family: 'Arial';
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 100px;
+
+ }
+
+ .iconlink p {
+    color: white;
+    font-weight: bold;
+    margin-top: 5px; /* Adjust this value to your liking */
+
 }
 
 .icon p {
