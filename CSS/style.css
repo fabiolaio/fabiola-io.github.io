@@ -48,10 +48,9 @@ header {
 }
 
 .iconlink {
-    display: inline-block;
+    z-index: 1;
     width: 60px;
     height: 60px;
-    text-align: center;
     position: relative;
     z-index: 1;
     cursor: url(../CSS/cursor.png), auto;
