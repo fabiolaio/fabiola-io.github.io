@@ -162,10 +162,7 @@ header {
     height: 30px;
 }
 
-.start-menu ul li:hover, .start-menu ul li:active {
-    background-color: white;
-    color: black;
-}
+
 
 #start-logo {
     width: 20px;
@@ -201,6 +198,6 @@ header {
 }
 
 .start-menu-item:hover {
-    background-color: rgb(0,0,255);
+    background-color: rgb(255, 255, 255);
     color: white;
 }
