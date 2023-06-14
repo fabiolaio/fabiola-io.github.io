@@ -47,6 +47,16 @@ header {
     cursor: url(../CSS/cursor.png), auto;
 }
 
+.iconlink {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    cursor: url(../CSS/cursor.png), auto;
+}
+
 .icon p {
     color: white;
     font-weight: bold;
