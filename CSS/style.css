@@ -29,6 +29,12 @@ header {
 
  }
 
+ @font-face {
+    font-family: Compaq;
+  src: url(Compaq_Port3.woff);
+}
+  
+
  #desktop {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
@@ -112,7 +118,7 @@ header {
     align-items: center;
     background:  rgb(240, 113, 197);
     color: #ffffff;
-    font-family: 'MS Sans Serif', sans-serif;
+    font-family: 'Compaq';
     font-weight: bold;
     padding: 2px;
     height: 20px;  /* Adjust this value as needed */
@@ -153,7 +159,7 @@ header {
     display: flex;
     align-items: center;
     color: #000000;
-    font-family: 'MS Sans Serif', sans-serif;
+    font-family: 'Compaq';
     font-weight: bold;
     border-style: solid;
     border-width: 2px 2px 2px 2px;
@@ -172,7 +178,7 @@ header {
 }
 
 #clock {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Compaq';
     border-style: solid;
     border-width: 1px 1px 1px 1px;
     border-color: #000000 #ffffff #ffffff #000000; /* top, right, bottom, left */
