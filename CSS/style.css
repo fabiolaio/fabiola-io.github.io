@@ -58,7 +58,6 @@ header {
 .icon-ex {
     position: relative;
     z-index: 1;
-    text-align: center;
     width: 60px;
     height: 60px;
     cursor: url(../CSS/cursor.png), auto;
