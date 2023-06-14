@@ -24,6 +24,11 @@ $(document).ready(function() {
         $artworkWindow.show();
     });
 
+    $('.icons').click(function() {
+        var url = $(this).data('url');
+        window.open(url, '_blank');
+    });
+
     $('.title-bar button').click(function() {
         $artworkWindow.hide();
     });
