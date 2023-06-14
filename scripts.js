@@ -24,7 +24,7 @@ $(document).ready(function() {
         $artworkWindow.show();
     });
 
-document.querySelectorAll('.icon-ex').forEach(icon => {
+document.querySelectorAll('.external').forEach(icon => {
     icon.addEventListener('click', function() {
         const url = this.getAttribute('data-url');
         window.open(url, '_blank');
