@@ -15,21 +15,20 @@ $(document).ready(function() {
     updateClock();
     setInterval(updateClock, 1000);
 
-    $('.icon').click(function() {
-        var artworkUrl = $(this).data('url');
-        var artworkName = $(this).find('p').text();
+    document.querySelectorAll('.icon').forEach(icon => {
+        icon.addEventListener('click', function() {
+            const url = this.getAttribute('data-url');
+            const isExternal = this.classList.contains('icon-external');
     
-        $artworkFrame.attr('src', artworkUrl);
-        $windowTitle.text(artworkName);
-        $artworkWindow.show();
+            if (isExternal) {
+                window.open(url, '_blank');
+            } else {
+                document.getElementById('artwork-frame').src = url;
+                document.getElementById('window-title').innerText = this.innerText;
+                document.getElementById('artwork-window').style.display = 'block';
+            }
+        });
     });
-
-document.querySelectorAll('.external').forEach(icon => {
-    icon.addEventListener('click', function() {
-        const url = this.getAttribute('data-url');
-        window.open(url, '_blank');
-    });
-});
 
     $('.title-bar button').click(function() {
         $artworkWindow.hide();
