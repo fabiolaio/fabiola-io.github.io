@@ -37,14 +37,12 @@ header {
 }
   
 
- #desktop {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-    gap: 20px; /* adjust as per your requirement */
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    /* Add other styles as required */
+#desktop {
+    display: flex;
+    flex-wrap: wrap; /* allows icons to wrap to next line if not enough space */
+    justify-content: space-around; /* evenly distribute icons along horizontal axis */
+    align-items: flex-start; /* align icons to start at the same vertical point */
+    padding: 20px; /* space around the icons container */
 }
 
 .icon, .iconlink {
@@ -58,6 +56,10 @@ header {
     height: 50px;
     margin: 0 10px;
     cursor: url(../CSS/cursor.png), auto;
+        /* Removed position: absolute; */
+        display: inline-block; /* Display icons inline and allow them to have block properties */
+        margin: 20px; /* Add some space around each icon */
+        /* Rest of your icon styles... */
 }
 
 .icon p, .iconlink p {
