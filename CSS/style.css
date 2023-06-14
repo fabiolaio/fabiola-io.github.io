@@ -55,15 +55,6 @@ header {
     cursor: url(../CSS/cursor.png), auto;
 }
 
-.icon-ex {
-    position: relative;
-    z-index: 1;
-    width: 60px;
-    height: 60px;
-    cursor: url(../CSS/cursor.png), auto;
-}
-
-
 .icon p {
     color: white;
     font-weight: bold;

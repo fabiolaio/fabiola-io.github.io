@@ -24,10 +24,12 @@ $(document).ready(function() {
         $artworkWindow.show();
     });
 
-    $('.icon-ex').click(function() {
-        var url = $(this).data('url');
+document.querySelectorAll('.icon-ex').forEach(icon => {
+    icon.addEventListener('click', function() {
+        const url = this.getAttribute('data-url');
         window.open(url, '_blank');
     });
+});
 
     $('.title-bar button').click(function() {
         $artworkWindow.hide();
