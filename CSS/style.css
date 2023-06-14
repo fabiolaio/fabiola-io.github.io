@@ -79,6 +79,12 @@ header {
 
 }
 
+.icon a {
+    display: block; /* or 'flex', depending on your design */
+    text-decoration: none;
+    /* add more styles as needed */
+}
+
 .icon p {
     color: white;
     font-weight: bold;
