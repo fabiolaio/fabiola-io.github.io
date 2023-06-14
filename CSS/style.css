@@ -31,10 +31,12 @@ header {
 
  #desktop {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 20px; /* adjust as per your requirement */
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    justify-items: center;
+    /* Add other styles as required */
 }
 
  #icontext {
