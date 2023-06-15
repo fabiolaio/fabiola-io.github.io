@@ -41,7 +41,7 @@ header {
     flex-wrap: wrap; /* allows icons to wrap to next line if not enough space */
     justify-content: space-around; /* evenly distribute icons along horizontal axis */
     align-items: flex-start; /* align icons to start at the same vertical point */
-    padding: 20px; /* space around the icons container */
+    padding: 0px; /* space around the icons container */
 }
 
 @media screen and (max-width: 600px) {
