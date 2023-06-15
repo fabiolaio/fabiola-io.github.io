@@ -89,11 +89,11 @@ header {
     overflow: hidden;
     background-color: rgb(255, 105, 180);
     writing-mode: vertical-lr;
+    z-index: 1;
 }
 
 #marqueeContent {
     width: 20px;
-    height: 60px;
     animation: marquee 30s linear infinite;
     color: white;
 }
