@@ -57,11 +57,13 @@ body {
 
 
 #desktop {
+    position: relative;
+    z-index: 1;
     display: flex;
-    flex-direction: column; /* change to column to stack icons vertically */
-    align-items: flex-start; /* align icons to the left */
+    flex-direction: column;
+    align-items: flex-start;
     padding: 0px; 
-    gap: 10px; /* space between icons */
+    gap: 10px;
 }
 
 @media screen and (max-width: 600px) {
