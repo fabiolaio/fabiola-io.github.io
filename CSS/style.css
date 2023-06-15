@@ -3,31 +3,50 @@ header {
     position: relative;
     z-index: 100;
 
+   body {
+
+    font-family: 'Compaq';
+    padding: 0;
+    margin: 0;
+        
+        /*background-color: rgb(244, 191, 255);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color:red;*/
+        cursor: url('../CSS/cursor.png'), auto;  z-index: 0;
+
   }
 
-  body {
-    display: grid;
-    grid-template-columns: 1fr 3fr; /* This creates two columns, one for left icons and one for right icons */
-    gap: 20px; /* This is the space between the two columns */
-    padding: 0px; /* This is the space around the grid */
-}
+  div.background-image {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../background.png');
+    background-size: 100%;
+    cursor: url(../CSS/cursor.png), auto;
 
-#left-icons {
+ }
+
+ @font-face {
+    font-family: 'Compaq';
+  src: url(../Compaq_Port3.woff);
+}
+  
+#desktop {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Aligns the icons to the left */
-    gap: 20px; /* Puts 20px of space between each icon */
-}
-
-#right-icons {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Creates a responsive grid that adjusts based on screen size */
-    gap: 20px; /* Puts 20px of space between each icon */
+    flex-wrap: wrap; /* allows icons to wrap to next line if not enough space */
+    justify-content: space-around; /* evenly distribute icons along horizontal axis */
+    align-items: flex-start; /* align icons to start at the same vertical point */
+    padding: 20px; /* space around the icons container */
 }
 
 @media screen and (max-width: 600px) {
-    body {
-        grid-template-columns: 1fr; /* This changes the layout to a single column */
+    #desktop {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* makes 3 columns */
+        grid-gap: 10px; /* adjust this value as needed for space between grid items */
     }
 }
 
@@ -59,6 +78,7 @@ header {
 .icon, .iconlink {
     position: relative;
     z-index: 2;
+    display: flex;
     text-align: center;
     flex-direction: column;
     align-items: center;
@@ -67,6 +87,10 @@ header {
     height: 50px;
     margin: 0 10px;
     cursor: url(../CSS/cursor.png), auto;
+        /* Removed position: absolute; */
+        display: inline-block; /* Display icons inline and allow them to have block properties */
+        margin: 20px; /* Add some space around each icon */
+        /* Rest of your icon styles... */
 }
 
 .icon p, .iconlink p {
@@ -76,6 +100,7 @@ header {
     font-size: 15px;
     text-align: center;
 }
+
 
 #marqueeContainer {
     position: fixed;

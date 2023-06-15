@@ -14,29 +14,20 @@ $(document).ready(function() {
     // Update the clock immediately, then every 1 second
     updateClock();
     setInterval(updateClock, 1000);
+
+  $('.icon').click(function() {
+        var artworkUrl = $(this).data('url');
+        var artworkName = $(this).find('p').text();
     
-    $(document).ready(function() {
-        var $windows = $('.window'); // All the windows
-        var $windowTitle = $('.title-bar span'); // The title bar span to show the title of window
-    
-        // On clicking any icon
-        $('.icon').click(function() {
-            var windowId = $(this).data('window'); // Get the window ID from the data-window attribute of the clicked icon
-            var windowUrl = $(this).data('url'); // Get the window URL from the data-url attribute of the clicked icon
-            var windowTitle = $(this).find('p').text(); // Get the title from the text of the p element in the clicked icon
-    
-            $windows.hide(); // Hide all windows
-            $('#' + windowId).load(windowUrl); // Load the window content from the URL
-            $('#' + windowId).show(); // Show the clicked window
-            $windowTitle.text(windowTitle); // Set the window title
-        });
-    
-        // On clicking the close button
-        $('.title-bar button').click(function() {
-            $windows.hide(); // Hide all windows
-        });
+        $artworkFrame.attr('src', artworkUrl);
+        $windowTitle.text(artworkName);
+        $artworkWindow.show();
     });
-    
+
+    $('.title-bar button').click(function() {
+        $artworkWindow.hide();
+    });
+});
 
 var $startButton = $('#start-button');
 var $startMenu = $('#start-menu');
