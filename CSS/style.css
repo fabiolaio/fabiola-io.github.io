@@ -37,24 +37,6 @@ body {
   src: url(../Compaq_Port3.woff);
 }
 
-}
-  
-#desktop {
-    display: flex;
-    flex-wrap: wrap; /* allows icons to wrap to next line if not enough space */
-    justify-content: space-around; /* evenly distribute icons along horizontal axis */
-    align-items: flex-start; /* align icons to start at the same vertical point */
-    padding: 0px; /* space around the icons container */
-}
-
-@media screen and (max-width: 600px) {
-    #desktop {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* makes 3 columns */
-        grid-gap: 10px; /* adjust this value as needed for space between grid items */
-    }
-}
-
 
   div.background-image {
     position: fixed;
@@ -74,6 +56,22 @@ body {
 }
 
 
+#desktop {
+    display: flex;
+    flex-direction: column; /* change to column to stack icons vertically */
+    align-items: flex-start; /* align icons to the left */
+    padding: 0px; 
+    gap: 10px; /* space between icons */
+}
+
+@media screen and (max-width: 600px) {
+    #desktop {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* makes 3 columns */
+        grid-gap: 10px; /* adjust this value as needed for space between grid items */
+    }
+}
+
 .icon, .iconlink {
     position: relative;
     z-index: 2;
@@ -86,10 +84,9 @@ body {
     height: 50px;
     margin: 0 10px;
     cursor: url(../CSS/cursor.png), auto;
-        /* Removed position: absolute; */
-        display: inline-block; /* Display icons inline and allow them to have block properties */
-        margin: 20px; /* Add some space around each icon */
-        /* Rest of your icon styles... */
+    display: inline-block; /* Display icons inline and allow them to have block properties */
+    margin: 20px; /* Add some space around each icon */
+    /* Rest of your icon styles... */
 }
 
 .icon p, .iconlink p {
