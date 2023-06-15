@@ -79,7 +79,7 @@ body {
     text-align: center; /* center the text */
     flex-direction: column;
     align-items: center; /* remove justify-content: center; */
-    width: 50px;
+    width: 70px;
     height: 50px;
     margin: 0 10px;
     cursor: url(../CSS/cursor.png), auto;
