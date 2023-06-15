@@ -36,13 +36,20 @@ header {
   src: url(../Compaq_Port3.woff);
 }
   
-
 #desktop {
     display: flex;
     flex-wrap: wrap; /* allows icons to wrap to next line if not enough space */
     justify-content: space-around; /* evenly distribute icons along horizontal axis */
     align-items: flex-start; /* align icons to start at the same vertical point */
     padding: 20px; /* space around the icons container */
+}
+
+@media screen and (max-width: 600px) {
+    #desktop {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* makes 3 columns */
+        grid-gap: 10px; /* adjust this value as needed for space between grid items */
+    }
 }
 
 .icon, .iconlink {
@@ -73,6 +80,8 @@ header {
 
 #marqueeContainer {
     position: fixed;
+    font-family: 'Compaq';
+    font-size: 30px; 
     width: 20px;
     height: 60vh; /* Reduced height */
     top: 20vh; /* Push down from top */
@@ -91,6 +100,12 @@ header {
 @keyframes marquee {
     0% { transform: translateY(100%); }
     100% { transform: translateY(-100%); }
+}
+
+@media screen and (max-width: 600px) {
+    #marqueeContent {
+        font-size: 10px; /* reduced size for mobile */
+    }
 }
 
 .window {
@@ -189,7 +204,6 @@ header {
     z-index: 1;
     width: 454px; /* Adjust based on the desired width of your GIF */
     height: 93px; /* Adjust based on the desired height of your GIF */
-
 }
 
 @media screen and (max-width: 600px) {
@@ -197,7 +211,12 @@ header {
     width: 300px; /* Adjust as needed for mobile devices */
     height: auto; /* You can set this to a specific value if you want, but "auto" maintains aspect ratio */
   }
+
+  #gif-container {
+    bottom: 60px; /* Adjust as needed for mobile devices */
+  }
 }
+
 
 #start-button {
     display: flex;
