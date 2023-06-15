@@ -6,18 +6,29 @@ header {
   }
 
   body {
-
     font-family: 'Compaq';
     padding: 0;
     margin: 0;
-        
-        /*background-color: rgb(244, 191, 255);
-        background-repeat: no-repeat;
-        background-size: cover;
-        color:red;*/
-        cursor: url('../CSS/cursor.png'), auto;  z-index: 0;
+    display: flex;
+    justify-content: space-between; /* Puts space between the two icon sets */
+    cursor: url('../CSS/cursor.png'), auto;  
+    z-index: 0;
+}
 
-  }
+#left-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns the icons to the left */
+    gap: 20px; /* Puts 20px of space between each icon */
+}
+
+#right-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Creates a responsive grid that adjusts based on screen size */
+    gap: 20px; /* Puts 20px of space between each icon */
+}
+
+  
 
   div.background-image {
     position: fixed;
@@ -151,6 +162,8 @@ header {
 
 }
 */
+
+
     
 
 #artwork-frame {
