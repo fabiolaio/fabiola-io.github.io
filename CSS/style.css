@@ -68,12 +68,6 @@ header {
   src: url(../Compaq_Port3.woff);
 }
 
-#desktop {
-    display: flex;
-    justify-content: space-between; /* This will provide space between left and right icons */
-    padding: 20px; /* This will provide a gap around the whole desktop area */
-    flex-wrap: wrap; /* This allows the items to wrap into next line if not enough space */
-}
 
 .icon, .iconlink {
     position: relative;
