@@ -179,11 +179,13 @@ header {
 
 #gif-container {
     position: fixed;
+    z-index: 1;
     bottom: 35px; /* Adjust based on height of taskbar + desired gap between taskbar and GIF */
     left: 0; /* Adjust based on the desired horizontal position of your GIF */
 }
 
 #gif-image {
+    z-index: 1;
     width: 100px; /* Adjust based on the desired width of your GIF */
     height: 100px; /* Adjust based on the desired height of your GIF */
 }
