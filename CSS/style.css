@@ -105,8 +105,10 @@ header {
 @media screen and (max-width: 600px) {
     #marqueeContent {
         font-size: 10px; /* reduced size for mobile */
+        bottom: 60px; /* or whatever value that works for your layout */
+    
+        }
     }
-}
 
 .window {
     position: fixed;
