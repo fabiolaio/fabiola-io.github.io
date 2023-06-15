@@ -81,7 +81,7 @@ header {
 #marqueeContainer {
     position: fixed;
     font-family: 'Compaq';
-    font-size: 30px; 
+    font-size: 20px; 
     width: 20px;
     height: 60vh; /* Reduced height */
     top: 20vh; /* Push down from top */
@@ -105,11 +105,13 @@ header {
 
 @media screen and (max-width: 600px) {
     #marqueeContent {
-        font-size: 10px; /* reduced size for mobile */
-        bottom: 60px; /* or whatever value that works for your layout */
-    
-        }
+        font-size: 15px; /* reduced size for mobile */
     }
+    #marqueeContainer {
+        bottom: 60px; /* or whatever value that works for your layout */
+    }
+}
+
 
     .window {
         position: fixed;
