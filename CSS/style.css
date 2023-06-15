@@ -160,6 +160,8 @@ header {
 .close {
     font-size: 12px; /* Adjust this value to control the size of the close button. */
     position: absolute;
+    font-family: 'Compaq';
+    font-weight: bold;
     top: 0;
     right: 0;
     height:25px;
