@@ -33,6 +33,8 @@ header {
     font-family: 'Compaq';
   src: url(../Compaq_Port3.woff);
 }
+
+}
   
 #desktop {
     display: flex;
