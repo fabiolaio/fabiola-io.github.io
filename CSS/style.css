@@ -9,7 +9,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 3fr; /* This creates two columns, one for left icons and one for right icons */
     gap: 20px; /* This is the space between the two columns */
-    padding: 20px; /* This is the space around the grid */
+    padding: 0px; /* This is the space around the grid */
 }
 
 #left-icons {
