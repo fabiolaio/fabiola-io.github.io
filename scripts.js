@@ -15,19 +15,25 @@ $(document).ready(function() {
     updateClock();
     setInterval(updateClock, 1000);
 
-    $('.icon').click(function() {
-        var artworkUrl = $(this).data('url');
-        var artworkName = $(this).find('p').text();
+    $(document).ready(function() {
+        var $windows = $('.window');
+        var $windowTitle = $('.title-bar span');
+        var $artworkFrame = $('#artwork-frame');
     
-        $artworkFrame.attr('src', artworkUrl);
-        $windowTitle.text(artworkName);
-        $artworkWindow.show();
+        $('.icon').click(function() {
+            var windowId = $(this).data('window'); // Get window ID from data attribute
+            var windowTitle = $(this).find('p').text();
+    
+            $windows.hide(); // Hide all windows
+            $('#' + windowId).show(); // Show the clicked window
+            $windowTitle.text(windowTitle);
+        });
+    
+        $('.title-bar button').click(function() {
+            $windows.hide(); // Hide all windows when close button is clicked
+        });
     });
-
-    $('.title-bar button').click(function() {
-        $artworkWindow.hide();
-    });
-});
+    
 
 var $startButton = $('#start-button');
 var $startMenu = $('#start-menu');

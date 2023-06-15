@@ -113,30 +113,44 @@ header {
 }
 
 
+.window {
+    position: fixed;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    background: rgb(255, 218, 250);
+    border: 1px solid black;
+    display: none; /* changed from "center" to "none" to hide windows initially */
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #ffffff #000000 #000000 #ffffff; /* top, right, bottom, left */
+    padding: 0px 2px;
+    transform: translate(-50%, -50%);
+    cursor: url(../CSS/cursor.png), auto;
+}
+
+@media screen and (max-width: 800px) {
     .window {
-        position: fixed;
-        z-index: 3;
-        top: 50%;
-        left: 50%;
-        width: 800px;
-        height: 800px;
-        background: rgb(255, 218, 250);
-        border: 1px solid black;
-        display: center;
-        border-style: solid;
-        border-width: 2px 2px 2px 2px;
-        border-color: #ffffff #000000 #000000 #ffffff; /* top, right, bottom, left */
-        padding: 0px 2px;
-        transform: translate(-50%, -50%);
-        cursor: url(../CSS/cursor.png), auto;
+        width: 90%; /* set the width to 90% of the viewport */
+        height: 90%; /* set the height to 90% of the viewport */
     }
-    
-    @media screen and (max-width: 800px) {
-        .window {
-            width: 90%; /* set the width to 90% of the viewport */
-            height: 90%; /* set the height to 90% of the viewport */
-        }
-    }
+}
+
+/* Individual window styles (if necessary) 
+#bio-window {
+
+}
+
+#work-window {
+
+}
+
+#contact-window {
+
+}
+*/
     
 
 #artwork-frame {
