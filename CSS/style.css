@@ -76,17 +76,15 @@ body {
     position: relative;
     z-index: 2;
     display: flex;
-    text-align: center;
+    text-align: center; /* center the text */
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* remove justify-content: center; */
     width: 50px;
     height: 50px;
     margin: 0 10px;
     cursor: url(../CSS/cursor.png), auto;
-    display: inline-block; /* Display icons inline and allow them to have block properties */
-    margin: 20px; /* Add some space around each icon */
-    /* Rest of your icon styles... */
+    display: inline-block;
+    margin: 20px;
 }
 
 .icon p, .iconlink p {
