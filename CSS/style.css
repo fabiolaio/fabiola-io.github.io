@@ -237,19 +237,6 @@ header {
     color: #000000;
     font-family: 'Compaq';
     font-weight: bold;
-    border-style: solid;
-    border-width: 2px 2px 2px 2px;
-    border-color: #ffffff #000000 #000000 #ffffff; /* top, right, bottom, left */
-    padding: 0px 2px;
-    height: 30px;
-}
-
-#start-button {
-    display: flex;
-    align-items: center;
-    color: #000000;
-    font-family: 'Compaq';
-    font-weight: bold;
     padding: 0px 2px;
     height: 30px;
     border-style: solid;
@@ -277,6 +264,7 @@ header {
 #start-menu {
     display: none;
     position: fixed;
+    z-index: 2;
     bottom: 30px; /* height of taskbar */
     left: 0;
     width: 200px;
