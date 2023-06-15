@@ -190,6 +190,13 @@ header {
     height: 93px; /* Adjust based on the desired height of your GIF */
 }
 
+@media screen and (max-width: 600px) {
+  #gif-image {
+    width: 300px; /* Adjust as needed for mobile devices */
+    height: auto; /* You can set this to a specific value if you want, but "auto" maintains aspect ratio */
+  }
+}
+
 
 #start-button {
     display: flex;
