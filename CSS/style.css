@@ -180,15 +180,17 @@ header {
 #gif-container {
     position: fixed;
     z-index: 1;
-    align-items: center;
     bottom: 35px; /* Adjust based on height of taskbar + desired gap between taskbar and GIF */
-    right: 0; /* If you want the gif to be at the far right of the screen. Adjust as needed. */
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 #gif-image {
     z-index: 1;
     width: 454px; /* Adjust based on the desired width of your GIF */
     height: 93px; /* Adjust based on the desired height of your GIF */
+
 }
 
 @media screen and (max-width: 600px) {
