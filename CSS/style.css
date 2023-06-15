@@ -3,7 +3,10 @@ header {
     position: relative;
     z-index: 100;
 
-   body {
+
+}
+
+body {
 
     font-family: 'Compaq';
     padding: 0;
