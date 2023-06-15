@@ -93,6 +93,7 @@ header {
 
 #marqueeContent {
     width: 20px;
+    height: 60px;
     animation: marquee 30s linear infinite;
     color: white;
 }
