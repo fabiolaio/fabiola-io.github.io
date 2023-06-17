@@ -235,6 +235,7 @@ body {
   }
 
   #masterclass-icon-link {
+    order: -1; 
     display: inline-block;
     width: 20px;  /* adjust as needed */
     height: 20px; /* adjust as needed */
@@ -267,6 +268,7 @@ body {
 #masterclass-icon-link:hover::after {
     display: block;
 }
+
 
   #clock {
     font-family: 'Compaq';
@@ -304,6 +306,7 @@ body {
 
 
 #start-button {
+
     display: flex;
     align-items: center;
     color: #000000;
