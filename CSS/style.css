@@ -76,7 +76,7 @@ body {
 
 .icon, .iconlink {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     display: flex;
     text-align: center; /* center the text */
     flex-direction: column;
@@ -234,6 +234,40 @@ body {
     }
   }
 
+  #masterclass-icon-link {
+    display: inline-block;
+    width: 20px;  /* adjust as needed */
+    height: 20px; /* adjust as needed */
+    position: relative;
+}
+
+#masterclass-icon {
+    width: 100%;
+    height: 100%;
+}
+
+#masterclass-icon-link:hover {
+    opacity: 0.7;
+}
+
+#masterclass-icon-link::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -20px; /* adjust as needed */
+    left: 0;
+    white-space: nowrap;
+    display: none;
+    padding: 2px 5px;
+    background: #000;
+    color: #fff;
+    font-size: 10px; /* adjust as needed */
+    z-index: 1;
+}
+
+#masterclass-icon-link:hover::after {
+    display: block;
+}
+In this setup, when someone hovers over the icon, the CSS hover pseudo-class decreases the icon's opacity to 0.7 (you can adjust this as you like). The ::after pseudo-element creates a tooltip that shows the title at
   #clock {
     font-family: 'Compaq';
     border-style: solid;
