@@ -38,12 +38,17 @@ $startButton.click(function() {
 });
 
 $startMenuItems.click(function() {
-    var artworkUrl = $(this).data('url');
+    var url = $(this).data('url');
     var title = $(this).data('title');
 
-    $artworkFrame.attr('src', artworkUrl);
-    $windowTitle.text(title);
-    $artworkWindow.show();
+    if (url.startsWith('http')) {
+        window.open(url, '_blank'); // open in a new tab
+    } else {
+        $artworkFrame.attr('src', url);
+        $windowTitle.text(title);
+        $artworkWindow.show();
+    }
+
     $startMenu.hide(); // hide the start menu
 });
 
@@ -53,6 +58,8 @@ $(document).click(function(event) {
         $startMenu.hide();
     }
 });
+
+
 
 function updateClock() {
     let date = new Date();
