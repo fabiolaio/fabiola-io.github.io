@@ -235,7 +235,7 @@ body {
   }
 
   #masterclass-icon-link {
-    order: -1; 
+    order: 10px; 
     display: inline-block;
     width: 20px;  /* adjust as needed */
     height: 20px; /* adjust as needed */
