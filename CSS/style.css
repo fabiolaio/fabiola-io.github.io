@@ -241,6 +241,7 @@ body {
     width: 20px;  /* adjust as needed */
     height: 20px; /* adjust as needed */
     position: relative;
+    margin-left: 10px; /* adjust this as needed to create space between the start button and the masterclass icon */
 }
 
 #masterclass-icon {
