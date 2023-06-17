@@ -267,7 +267,7 @@ body {
 #masterclass-icon-link:hover::after {
     display: block;
 }
-In this setup, when someone hovers over the icon, the CSS hover pseudo-class decreases the icon's opacity to 0.7 (you can adjust this as you like). The ::after pseudo-element creates a tooltip that shows the title at
+
   #clock {
     font-family: 'Compaq';
     border-style: solid;
