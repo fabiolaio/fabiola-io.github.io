@@ -256,12 +256,12 @@ body {
 #masterclass-icon-link::after {
     content: attr(title);
     position: absolute;
-    bottom: -20px; /* adjust as needed */
+    top: -20px; /* adjust as needed */
     left: 0;
     white-space: nowrap;
     display: none;
     padding: 2px 5px;
-    background: #da3b9d;
+    background: #000;
     color: #fff;
     font-size: 10px; /* adjust as needed */
     z-index: 1;
