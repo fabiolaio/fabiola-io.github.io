@@ -254,6 +254,7 @@ body {
 }
 
 #masterclass-icon-link::after {
+    font-size: 12px;
     content: attr(title);
     position: absolute;
     top: -20px; /* adjust as needed */
