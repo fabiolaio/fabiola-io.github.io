@@ -196,6 +196,7 @@ body {
 }
 
 .close {
+    float: right;
     font-size: 12px; /* Adjust this value to control the size of the close button. */
     position: absolute;
     font-family: 'Compaq';
