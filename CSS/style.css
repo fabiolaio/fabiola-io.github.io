@@ -279,6 +279,7 @@ body {
     border-color: #000000 #ffffff #ffffff #000000; /* top, right, bottom, left */
     padding: 2px 5px;
     background: rgb(240, 113, 197);
+    margin-left: auto;
 }
 
 #gif-container {
