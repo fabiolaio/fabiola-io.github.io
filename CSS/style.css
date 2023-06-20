@@ -222,6 +222,7 @@ body {
     border-color: #ffffff #000000 #000000; /* top, right, bottom*/
     padding: 1px 4px;
     height: 30px;
+    cursor: url('../CSS/cursor.png'), auto;
 }
 
 @media screen and (max-device-width: 600px) {
@@ -274,6 +275,7 @@ body {
 
 
 #clock {
+    order: 90; 
     font-family: 'Compaq';
     border-style: solid;
     border-width: 1px 1px 1px 1px;
