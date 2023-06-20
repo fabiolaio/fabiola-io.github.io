@@ -24,6 +24,31 @@ $(document).ready(function() {
     });
 
     var $startButton = $('#start-button');
+var $startMenu = $('#start-menu');
+var $startMenuItems = $('.start-menu-item');
+
+$startButton.click(function(event) {
+    $startMenu.toggle();
+    event.stopPropagation();
+});
+
+$startMenuItems.click(function(event) {
+    var url = $(this).data('url');
+    var title = $(this).data('title');
+
+    if (url.startsWith('http')) {
+        window.open(url, '_blank');
+    } else {
+        $artworkFrame.attr('src', url);
+        $windowTitle.text(title);
+        $artworkWindow.show();
+    }
+
+    $startMenu.hide();
+    event.stopPropagation();
+});
+
+    var $startButton = $('#start-button');
     var $startMenu = $('#start-menu');
     var $startMenuItems = $('.start-menu-item');
 
@@ -32,25 +57,22 @@ $(document).ready(function() {
         event.stopPropagation();
     });
 
-    $startMenuItems.click(function(event) {
-        var url = $(this).data('url');
-        var title = $(this).data('title');
+$startMenuItems.click(function(event) {
+    console.log("Start menu item clicked");  // Add this line
 
-        if (url.startsWith('http')) {
-            window.open(url, '_blank');
-        } else {
-            $artworkFrame.attr('src', url);
-            $windowTitle.text(title);
-            $artworkWindow.show();
-        }
+    var url = $(this).data('url');
+    var title = $(this).data('title');
 
-        $startMenu.hide();
-        event.stopPropagation();
-    });
+    if (url.startsWith('http')) {
+        window.open(url, '_blank');
+    } else {
+        $artworkFrame.attr('src', url);
+        $windowTitle.text(title);
+        $artworkWindow.show();
+    }
 
-    $(document).click(function() {
-        $startMenu.hide();
-    });
+    $startMenu.hide();
+    event.stopPropagation();
 });
 
 function updateClock() {
