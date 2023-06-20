@@ -6,11 +6,12 @@
     padding: 20px; /* adjust as needed to align your content properly within the frame */
 }
 
-body {
+@font-face {
+    font-family: 'Compaq';
+    src: url(../Compaq_Port3.woff);
+}
 
+body {
     font-family: 'Compaq';
     cursor: url('../CSS/cursor.png'), auto;
-
-  }
-
-  
+}
