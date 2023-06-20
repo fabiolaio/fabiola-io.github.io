@@ -344,7 +344,7 @@ body {
 }*/
 
 #start-menu {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 5;
     bottom: 30px; /* height of taskbar */
