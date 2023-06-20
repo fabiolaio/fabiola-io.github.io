@@ -26,16 +26,16 @@ $(document).ready(function() {
     var $startButton = $('#start-button');
     var $startMenu = $('#start-menu');
     var $startMenuItems = $('.start-menu-item');
-
+    
     $startButton.click(function(event) {
         $startMenu.toggle();
         event.stopPropagation();
     });
-
+    
     $startMenuItems.click(function(event) {
         var url = $(this).data('url');
         var title = $(this).data('title');
-
+    
         if (url.startsWith('http')) {
             window.open(url, '_blank');
         } else {
@@ -43,15 +43,15 @@ $(document).ready(function() {
             $windowTitle.text(title);
             $artworkWindow.show();
         }
-
+    
         $startMenu.hide();
         event.stopPropagation();
     });
-
+    
     $(document).click(function() {
         $startMenu.hide();
     });
-});
+    
 
 function updateClock() {
     let date = new Date();
