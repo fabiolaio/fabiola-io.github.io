@@ -68,3 +68,4 @@ function updateClock() {
     let strTime = hours + ':' + minutes + ' ' + ampm;
 
     document.getElementById('clock').textContent = strTime;
+}
