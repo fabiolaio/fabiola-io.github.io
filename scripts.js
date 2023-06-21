@@ -27,28 +27,26 @@ $(document).ready(function() {
     var $startMenu = $('#start-menu');
     var $startMenuItems = $('.start-menu-item');
 
-    $startButton.click(function(event) {
-        $startMenu.toggle();
-        event.stopPropagation();
-    });
+$startButton.click(function(event) {
+    $startMenu.toggle();
+    event.stopPropagation();
+});
 
-    $startMenuItems.click(function(event) {
-        console.log("Start menu item clicked");
+$startMenuItems.click(function(event) {
+    console.log("Start menu item clicked");  // Add this line
+    var url = $(this).data('url');
+    var title = $(this).data('title');
 
-        var url = $(this).data('url');
-        var title = $(this).data('title');
+    if (url.startsWith('http')) {
+        window.open(url, '_blank');
+    } else {
+        $artworkFrame.attr('src', url);
+        $windowTitle.text(title);
+        $artworkWindow.show();
+    }
 
-        if (url.startsWith('http')) {
-            window.open(url, '_blank');
-        } else {
-            $artworkFrame.attr('src', url);
-            $windowTitle.text(title);
-            $artworkWindow.show();
-        }
-
-        $startMenu.hide();
-        event.stopPropagation();
-    });
+    $startMenu.hide();
+    event.stopPropagation();
 });
 
 function updateClock() {
