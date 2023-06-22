@@ -399,3 +399,12 @@ body {
 .start-menu-item:hover > ul {
     display: block;
 }
+
+#start-menu a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Makes the color the same as the parent element */
+}
+
+#start-menu a:visited {
+    color: inherit; /* Ensures the color remains the same even after the link is clicked */
+}
