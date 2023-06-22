@@ -376,7 +376,7 @@ body {
 }
 
 .start-menu-item > ul {
-    width: 150%;
+    width: 100%;
     list-style: none; /* add this line */
     color: #0a0000;
     margin-top: 0;
