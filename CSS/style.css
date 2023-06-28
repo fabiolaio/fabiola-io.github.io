@@ -383,7 +383,7 @@ body {
 }
 
 .start-menu-item > ul {
-    width: 100%;
+    width: 150%;
     list-style: none; /* add this line */
     color: #0a0000;
     margin-top: 0;
