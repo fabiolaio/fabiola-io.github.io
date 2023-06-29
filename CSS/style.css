@@ -173,13 +173,14 @@ body {
 
 }
 */
+
 .pop-up {
     position: fixed;
     z-index: 4;
     top: 50%;
     right: 10px; 
     width: 350px;
-    height: 500px;
+    height: 600px;
     background: rgb(255, 218, 250);
     border: 1px solid black;
     display: block;
@@ -189,7 +190,6 @@ body {
     padding: 0px 2px;
     transform: translateY(-50%);
 }
-
 
 .pop-up-title-bar {
     background: rgb(240, 113, 197);
@@ -223,6 +223,16 @@ body {
 
 .pop-up-content {
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+}
+
+.pop-up-content .twitter-tweet {
+    margin: 0 auto !important;
 }
 
 @media screen and (max-width: 600px) {
@@ -230,6 +240,7 @@ body {
         display: none;
     }
 }
+
 
 
     
