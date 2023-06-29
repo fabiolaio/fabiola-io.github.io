@@ -138,7 +138,7 @@ body {
 .window {
     position: fixed;
     z-index: 3;
-    top: 50%;
+    top: 45%;
     left: 50%;
     width: 800px;
     height: 800px;
@@ -173,6 +173,63 @@ body {
 
 }
 */
+.pop-up {
+    position: fixed;
+    z-index: 4;
+    top: 50%;
+    right: 10px; 
+    width: 350px;
+    height: 500px;
+    background: rgb(255, 218, 250);
+    border: 1px solid black;
+    display: block;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #ffffff #000000 #000000 #ffffff;
+    padding: 0px 2px;
+    transform: translateY(-50%);
+}
+
+
+.pop-up-title-bar {
+    background: rgb(240, 113, 197);
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pop-up-title-bar p {
+    margin: 0;
+}
+
+.pop-up .title-bar button {
+    width: 24px;
+    height: 24px;
+    background: #c0c0c0; /* Light gray background */
+    color: #808080; /* Gray text color */
+    font-weight: bold;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    margin: 2px;
+    border-color: #ffffff #808080 #808080 #ffffff; /* top, right, bottom, left */
+}
+
+.pop-up .title-bar button:active {
+    border-color: #808080 #ffffff #ffffff #808080; /* top, right, bottom, left */
+}
+
+.pop-up-content {
+    padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .pop-up {
+        display: none;
+    }
+}
 
 
     
