@@ -54,48 +54,48 @@ body {
     font-family: 'Compaq';
   src: url(../Compaq_Port3.woff);
 }
-
 #desktop {
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-    align-content: start; /* aligns flex lines at the start of the container */
-    height: calc(100vh - 30px); /* assumes taskbar is 30px high */
+    justify-content: space-around; /* evenly distribute space around items */
+    max-width: 100%; /* prevents overflow of the parent */
+    height: calc(100vh - 30px);
     padding: 10px;
-    row-gap: 10px;
-    column-gap: 10px;
 }
-
-@media screen and (max-width: 600px) {
-    #desktop {
-        flex-direction: row;
-    }
-}
-
-
-
 
 .icon, .iconlink {
     position: relative;
     z-index: 2;
     display: flex;
-    text-align: center; /* center the text */
     flex-direction: column;
-    align-items: center; /* remove justify-content: center; */
+    align-items: center;
     width: 70px;
     height: 50px;
-    margin: 0 10px;
     cursor: url(../CSS/cursor.png), auto;
-    display: inline-block;
     margin: 20px;
+    text-align: center;
 }
 
 .icon p, .iconlink p {
     color: white;
     font-family: 'Compaq';
+    width: auto;
     margin-top: 5px;
     font-size: 15px;
     text-align: center;
+}
+
+@media (max-width: 740px) {
+    #desktop {
+        flex-direction: row;
+        align-content: start;
+        flex-wrap: wrap;
+    }
+
+    .icon, .iconlink {
+        width: calc(33.33% - 40px); /* 33.33% for 3 items per row, 40px for margin */
+        margin: 20px;
+    }
 }
 
 
@@ -488,15 +488,3 @@ body {
 #start-menu a:visited {
     color: inherit; /* Ensures the color remains the same even after the link is clicked */
 }
-
-.submenu-item {
-    margin: 10px 0; /* 10px top and bottom, 0 left and right */
-}
-
-.submenu {
-    position: absolute;
-    top: 100%; /* aligns the top edge of the submenu with the bottom edge of the parent item */
-    left: 0; /* aligns the left edge of the submenu with the left edge of the parent item */
-    /* ...other styles... */
-}
-
