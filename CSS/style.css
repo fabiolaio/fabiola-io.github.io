@@ -489,7 +489,7 @@ body {
 }
 
 .submenu-item {
-    margin: 3px 0; /* 10px top and bottom, 0 left and right */
+    margin: 10px 0; /* 10px top and bottom, 0 left and right */
 }
 
 .submenu {
