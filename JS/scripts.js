@@ -33,22 +33,41 @@ $(document).ready(function() {
     $startButton.click(function() {
         $startMenu.toggle(); // show or hide the start menu
     });
-
-    $startMenuItems.click(function(e) {
-        e.stopPropagation();
-
-        if($(this).children('ul').length > 0) {
-            $(this).children('ul').toggle(); // show or hide the nested menu
-        } else {
+    
+    $submenuItems.click(function(e) {
+        e.stopPropagation(); // prevent triggering of parent's click event
+    
+        var $submenu = $(this).children('ul');
+        var submenuHeight = $submenu.outerHeight(); // get height of submenu
+        var menuItemPos = $(this).offset().top; // get top position of menu item
+        var menuItemHeight = $(this).outerHeight(); // get height of menu item
+        var viewportHeight = $(window).height(); // get height of viewport
+    
+        if($submenu.length > 0) { // if this is a submenu parent
+            if(viewportHeight - menuItemPos - menuItemHeight < submenuHeight) { // if the submenu is too tall to fit below the item
+                $submenu.css('top', '-' + (submenuHeight - menuItemHeight) + 'px'); // set the top position of the submenu to be above the menu item
+            } else {
+                $submenu.css('top', '100%'); // otherwise, position it normally
+            }
+    
+            $submenu.toggle(); // show or hide the nested menu
+        } else { // if this is a submenu item
             var artworkUrl = $(this).data('url');
             var title = $(this).data('title');
-
-            $artworkFrame.attr('src', artworkUrl);
-            $windowTitle.text(title);
-            $artworkWindow.show();
-            $startMenu.hide(); // hide the start menu
+    
+            if(artworkUrl && title) {
+                $artworkFrame.attr('src', artworkUrl);
+                $windowTitle.text(title);
+                $artworkWindow.show();
+                $startMenu.hide(); // hide the start menu
+            }
         }
     });
+    
+
+
+
+
 
     $(document).click(function(event) {
         // If the click was not on the start button or start menu (or any of their children), hide the start menu

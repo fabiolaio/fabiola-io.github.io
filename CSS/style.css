@@ -487,3 +487,15 @@ body {
 #start-menu a:visited {
     color: inherit; /* Ensures the color remains the same even after the link is clicked */
 }
+
+.submenu-item {
+    margin: 3px 0; /* 10px top and bottom, 0 left and right */
+}
+
+.submenu {
+    position: absolute;
+    top: 100%; /* aligns the top edge of the submenu with the bottom edge of the parent item */
+    left: 0; /* aligns the left edge of the submenu with the left edge of the parent item */
+    /* ...other styles... */
+}
+
