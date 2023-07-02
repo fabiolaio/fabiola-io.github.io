@@ -36,19 +36,28 @@ $(document).ready(function() {
 
     $startMenuItems.click(function(e) {
         e.stopPropagation();
-
+        
+        console.log("Menu item clicked", this);
+        console.log("Has children UL", $(this).children('ul').length);
+        
         if($(this).children('ul').length > 0) {
             $(this).children('ul').toggle(); // show or hide the nested menu
         } else {
             var artworkUrl = $(this).data('url');
             var title = $(this).data('title');
-
-            $artworkFrame.attr('src', artworkUrl);
-            $windowTitle.text(title);
-            $artworkWindow.show();
+    
+            var dataArtwork = $(this).data('artwork');
+            if (dataArtwork === true) {
+                $artworkFrame.attr('src', artworkUrl);
+                $windowTitle.text(title);
+                $artworkWindow.show();
+            }
+    
             $startMenu.hide(); // hide the start menu
         }
     });
+    
+    
 
     $(document).click(function(event) {
         // If the click was not on the start button or start menu (or any of their children), hide the start menu
