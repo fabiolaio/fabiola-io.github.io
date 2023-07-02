@@ -454,6 +454,7 @@ body {
 }
 
 .start-menu-item > ul {
+    z-index: 6;
     width: 100%; /* Change from 150% to 100% */
     list-style: none; /* add this line */
     color: #0a0000;
