@@ -437,12 +437,6 @@ body {
     
 }
 
-@media screen and (max-width: 600px) {
-    #start-menu {
-        width: 100%; /* full width on mobile */
-    }
-}
-
 .start-menu-item {
     margin: 10px;
     width: 100%;
@@ -460,7 +454,7 @@ body {
 }
 
 .start-menu-item > ul {
-    width: 150%;
+    width: 100%; /* Change from 150% to 100% */
     list-style: none; /* add this line */
     color: #0a0000;
     margin-top: 0;
@@ -469,18 +463,30 @@ body {
     background-color: rgb(240, 113, 197);
     display: none;
     position: absolute;
-    left: 100%;
+    left: 0; /* Change from 100% to 0 */
     top: 0;
     border-style: solid;
     border-width: 2px 2px 2px 2px;
     border-color: #ffffff #000000 #000000 #ffffff; /* top, right, bottom, left */
-    
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .start-menu-item > ul {
-        width: 100%; /* Full width on mobile */
-        left: 0; /* Align with the parent item */
+        z-index: 6;
+        width: 100%;
+        list-style: none; 
+        color: #0a0000;
+        margin-top: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color: rgb(240, 113, 197);
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-style: solid;
+        border-width: 2px 2px 2px 2px;
+        border-color: #ffffff #000000 #000000 #ffffff; /* top, right, bottom, left */
     }
 }
 
@@ -493,14 +499,6 @@ body {
 
 .start-menu-item:hover > ul {
     display: block;
-}
-
-
-@media screen and (max-width: 600px) {
-    .start-menu-item:hover > ul {
-        display: flex;
-        flex-direction: column; /* To stack submenu items vertically on mobile */
-    }
 }
 
 #start-menu a {
