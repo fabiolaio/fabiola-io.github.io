@@ -173,8 +173,8 @@ body {
 
 #contact-window {
 
-}
-*/
+}*/
+
 
 .pop-up {
     position: fixed;
@@ -182,7 +182,6 @@ body {
     top: 50%;
     right: 10px; 
     width: 350px;
-    height: 600px;
     background: rgb(255, 218, 250);
     border: 1px solid black;
     display: block;
@@ -242,8 +241,6 @@ body {
         display: none;
     }
 }
-
-
 
     
 

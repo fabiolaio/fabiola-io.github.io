@@ -57,8 +57,6 @@ $(document).ready(function() {
         }
     });
     
-    
-
     $(document).click(function(event) {
         // If the click was not on the start button or start menu (or any of their children), hide the start menu
         if (!$(event.target).closest('#start-button, #start-menu').length) {
