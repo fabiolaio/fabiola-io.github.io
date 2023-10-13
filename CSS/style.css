@@ -2,6 +2,7 @@
 header {
     position: relative;
     z-index: 100;
+    cursor: url(../CSS/cursor.png), auto;
 
 
 }
@@ -35,6 +36,7 @@ body {
  @font-face {
     font-family: 'Compaq';
   src: url(../Compaq_Port3.woff);
+  cursor: url(../CSS/cursor.png), auto;
 }
 
 
@@ -53,6 +55,7 @@ body {
  @font-face {
     font-family: 'Compaq';
   src: url(../Compaq_Port3.woff);
+  cursor: url(../CSS/cursor.png), auto;
 }
 
 #desktop {
@@ -62,6 +65,7 @@ body {
     align-content: start; /* aligns flex lines at the start of the container */
     height: calc(100vh - 30px); /* assumes taskbar is 30px high */
     padding: 10px;
+    cursor: url(../CSS/cursor.png), auto;
 }
 
 .icon, .iconlink {
@@ -86,6 +90,7 @@ body {
     margin-top: 5px;
     font-size: 15px;
     text-align: center;
+    cursor: url(../CSS/cursor.png), auto;
 }
 
 @media screen and (max-width: 600px) {
@@ -190,6 +195,7 @@ body {
     border-color: #ffffff #000000 #000000 #ffffff;
     padding: 0px 2px;
     transform: translateY(-50%);
+    cursor: url(../CSS/cursor.png), auto;
 }
 
 .pop-up-title-bar {
@@ -199,6 +205,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: url(../CSS/cursor.png), auto;
 }
 
 .pop-up-title-bar p {
@@ -404,6 +411,7 @@ body {
     width: 20px;
     height: 20px;
     margin-right: 5px;
+    cursor: url(../CSS/cursor.png), auto;
 }
 
 /*
@@ -442,12 +450,14 @@ body {
     cursor: pointer;
     padding: 5px;
     position: relative;
+    cursor: url(../CSS/cursor.png), auto;
 }
 
 .start-menu-item:hover {
     width: 100%;
     background-color: rgb(255, 255, 255);
     color: rgb(240, 113, 197);
+    cursor: url(../CSS/cursor.png), auto;
 }
 
 .start-menu-item > ul {
@@ -465,6 +475,7 @@ body {
     display: none;
     border-style: solid;
     border-width: 2px 2px 2px 2px;
+    cursor: url(../CSS/cursor.png), auto;
     border-color: #ffffff #000000 #000000 #ffffff; /* top, right, bottom, left */
 }
 @media only screen and (max-width: 600px) {
@@ -492,17 +503,22 @@ body {
 
     background-color: rgb(255, 255, 255);
     color: rgb(240, 113, 197);
+    cursor: url(../CSS/cursor.png), auto;
+    
 }
 
 .start-menu-item:hover > ul {
     display: block;
+    cursor: url(../CSS/cursor.png), auto;
 }
 
 #start-menu a {
     text-decoration: none; /* Removes the underline */
     color: inherit; /* Makes the color the same as the parent element */
+    cursor: url(../CSS/cursor.png), auto;
 }
 
 #start-menu a:visited {
+    cursor: url(../CSS/cursor.png), auto;
     color: inherit; /* Ensures the color remains the same even after the link is clicked */
 }
