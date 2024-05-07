@@ -408,6 +408,12 @@ body {
     cursor: url(../CSS/cursor.png), auto;
 }
 
+.button{
+    cursor: url(../CSS/cursor.png), auto;
+}
+.button:hover::after {
+    cursor: url(../CSS/cursor.png), auto;
+}
 
 #start-logo {
     width: 20px;
@@ -432,11 +438,11 @@ body {
     z-index: 5;
     bottom: 30px; /* height of taskbar */
     left: 0;
-    width: 220px;
+    width: 250px;
     background-color: rgb(240, 113, 197);
     border: 1px solid black;
     list-style-type: none;
-    padding: 5px;
+    padding: 3px;
     cursor: url('../CSS/cursor.png'), auto;
     border-style: solid;
     border-width: 2px 2px 2px 2px;
@@ -450,7 +456,7 @@ body {
     list-style: none; /* add this line */
     color: #0a0000;
     cursor: pointer;
-    padding: 5px;
+    padding: 10px;
     position: relative;
     cursor: url(../CSS/cursor.png), auto;
 }
