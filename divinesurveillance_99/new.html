@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Divine Blessings Debug</title>
+  <style>
+    #blessing-popup {
+      display: none;
+      position: fixed;
+      top: 100px;
+      left: 100px;
+      width: 250px;
+      background-color: #fff;
+      border: 3px double #0000ff;
+      box-shadow: 5px 5px #888;
+      font-family: 'Verdana', sans-serif;
+      font-size: 14px;
+      z-index: 1000;
+      padding: 10px;
+      color: black;
+      text-align: left;
+    }
+
+    button {
+      background: #0000ff;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body style="background:black; color:lime; text-align:center; font-family:'Courier New', monospace;">
+
+  <h1>🌐 DivineSurveillance_1999</h1>
+  <p>Wait for 5 seconds and a holy pop-up shall appear...</p>
+
+  <div id="blessing-popup">
+    <strong>Blessing.exe</strong><br><br>
+    <span id="blessing-text">You are being watched with love.</span><br><br>
+    <button onclick="document.getElementById('blessing-popup').style.display='none'">OK</button>
+  </div>
+
+  <script>
+    const blessings = [
+      "You are being watched with love.",
+      "Digital salvation pending...",
+      "Blessed are the always online.",
+      "He sees your cookies and your sins.",
+      "Loading forgiveness...",
+      "Divine IP address: 127.0.0.1",
+      "You are never alone (literally).",
+      "Confession uploaded successfully.",
+      "Ave María.exe has crashed.",
+      "404: Sin not found (yet)."
+    ];
+
+    function showBlessing() {
+      const popup = document.getElementById("blessing-popup");
+      const text = document.getElementById("blessing-text");
+      text.innerText = blessings[Math.floor(Math.random() * blessings.length)];
+      popup.style.display = "block";
+      popup.style.top = Math.floor(Math.random() * (window.innerHeight - 200)) + "px";
+      popup.style.left = Math.floor(Math.random() * (window.innerWidth - 300)) + "px";
+    }
+
+    // Trigger blessing after 5 seconds (for testing)
+    setTimeout(showBlessing, 5000);
+  </script>
+
+</body>
+</html>

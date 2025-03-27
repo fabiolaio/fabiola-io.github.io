@@ -10,9 +10,11 @@
       text-align: center;
       cursor: url('https://www.rw-designer.com/cursor-view/29029.png'), auto;
     }
+
     .glitter {
       margin-top: 20px;
     }
+
     .prayer {
       margin: 40px auto;
       width: 60%;
@@ -21,17 +23,19 @@
       border: 2px dashed rgb(251, 255, 0);
       padding: 20px;
     }
+
     .surveillance {
       display: none;
       position: absolute;
       width: auto;
-
     }
+
     .hover-zone {
       position: absolute;
       width: 500px;
       height: 500px;
     }
+
     .popup {
       position: fixed;
       top: 20%;
@@ -44,6 +48,7 @@
       display: none;
       z-index: 999;
     }
+
     .popup button {
       background: black;
       color: white;
@@ -52,24 +57,30 @@
       margin-top: 10px;
       cursor: pointer;
     }
+
+    #blessing-popup {
+      display: none;
+      position: fixed;
+      top: 100px;
+      left: 100px;
+      width: 250px;
+      background-color: #fff;
+      border: 3px double #0000ff;
+      box-shadow: 5px 5px #888;
+      font-family: 'Verdana', sans-serif;
+      font-size: 14px;
+      z-index: 1000;
+      padding: 10px;
+      color: black;
+      text-align: left;
+    }
   </style>
-  <script>
-    function showCamera(id) {
-      document.getElementById(id).style.display = 'block';
-    }
-    function hideCamera(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-    function divineIntervention() {
-      document.getElementById('popup').style.display = 'block';
-    }
-  </script>
 </head>
 <body onload="setTimeout(divineIntervention, 7000)">
   <div class="glitter">
     <img src="cross2.gif" alt="Welcome Child">
     <br>
-    <img src="godss.png" alt="" style="max-width: 600px; margin: auto;>
+    <img src="godss.png" alt="" style="max-width: 600px; margin: auto;">
     <h1>✞ DivineSurveillance_1999 ✞</h1>
     <img src="angel.gif" alt="">
   </div>
@@ -77,85 +88,108 @@
   <div class="prayer">
     <p><span style="color:white;">Padre Nuestro</span> que estás en los <span style="color:#ff00ff;">cielos,</span> glitchificado sea tu <span style="color:#00ffff;">nombre</span>...</p>
     <p>as you scroll, the prayer corrupts... <br><em>is it divine... or digital?</em></p>
-    <div class="digital-prayer" style="max-width: 600px; margin: auto; font-family: 'Courier New', monospace; color: #00ffcc; line-height: 1.7; background: rgba(0,0,0,0.6); padding: 20px; border: 1px dashed #ff00ff;">
 
+    <div class="digital-prayer" style="max-width: 600px; margin: auto; font-family: 'Courier New', monospace; color: #00ffcc; line-height: 1.7; background: rgba(0,0,0,0.6); padding: 20px; border: 1px dashed #ff00ff;">
       <p>
         My mom used to tell me,<br>
         <em>that God was always watching</em><br>
         I grew up feeling observed.<br><br>
-    
+
         <strong>Padre nuestro</strong><br>
         Who art in heaven,<br><br>
-    
+
         I used to see myself in the mirror <br>
         And thought about god being on the other side<br><br>
-    
+
         <strong>Santificado sea tu nombre;</strong><br>
         Thy kingdom come;<br><br>
-    
+
         I remember songs about getting high<br>
         I have a constant eye...<br><br>
-    
+
         <strong>GOD is that you?</strong><br><br>
-    
+
         <strong>Hágase tu voluntad en la tierra como en el cielo.</strong><br>
         Give us this day our daily bread;<br>
         <strong>Perdona nuestras ofensas,</strong><br>
         As we forgive those who trespass against us;<br>
         <strong>No nos dejes caer en la tentación,</strong><br>
         But deliver us from evil.<br><br>
-    
+
         Amen, I used to say.<br><br>
-    
+
         <em>Please God don’t judge me when I go online</em><br>
         I just want to make my homework.<br>
         Then I start downloading and torrenting...<br>
         <strong>Empiezo a usar social media and then...</strong><br>
         I see the other god: <em>Google, yo te tecleo</em>.<br><br>
-    
+
         Then I like to post myself online.<br>
         The cameras are everywhere, why should I care?<br>
         There is always somebody watching.<br>
         Social media is us letting others see us through a personal lens.<br><br>
-    
+
         <strong>Vamos dejando data,</strong> the digital footprint...<br>
         We accept cookies and find strange comfort in being seen.<br><br>
-    
+
         <strong>Si lo sabe Dios que lo sepa el internet.</strong><br>
         For even as we curate, display, and post,<br>
         It's the unseen moments that we cherish most.<br><br>
-    
+
         So here I stand, with camera in my hand,<br>
         A deity of my own brand...<br><br>
-    
+
         <strong>Forgive me father, I have sinned.</strong><br>
         <strong>Amen.</strong>
       </p>
-    
     </div>
-    
-
   </div>
 
-  <div class="hover-zone" style="top: 500px; left: 120px;" 
-       onmouseover="showCamera('cam1')" onmouseout="hideCamera('cam1')"></div>
+  <!-- Hover Camera Zones -->
+  <div class="hover-zone" style="top: 500px; left: 120px;" onmouseover="showCamera('cam1')" onmouseout="hideCamera('cam1')"></div>
   <img id="cam1" class="surveillance" src="securitycamera2.gif" style="top: 500px; left: 120px;">
 
-  <div class="hover-zone" style="top: 500px; right: 120px;" 
-       onmouseover="showCamera('cam2')" onmouseout="hideCamera('cam2')"></div>
+  <div class="hover-zone" style="top: 500px; right: 120px;" onmouseover="showCamera('cam2')" onmouseout="hideCamera('cam2')"></div>
   <img id="cam2" class="surveillance" src="zoomsecurity.gif" style="top: 500px; right: 120px;">
 
+  <!-- Divine Intervention Pop-up -->
   <div class="popup" id="popup">
     <h3>✞ God is watching you ✞</h3>
     <p>Believe</p>
     <button onclick="document.getElementById('popup').style.display='none'">OK</button>
   </div>
 
+  <!-- Blessing Pop-up -->
+  <div id="blessing-popup">
+    <strong>Blessing.exe</strong><br><br>
+    <span id="blessing-text">You are being watched with love.</span><br><br>
+    <button onclick="document.getElementById('blessing-popup').style.display='none'">OK</button>
+  </div>
+
+  <!-- Floating Surveillance Follower -->
+  <img id="mouseFollower" src="https://media.tenor.com/N9TfSHKibSoAAAAj/security-camera.gif" 
+       style="position: fixed; top: 0; left: 0; width: 50px; pointer-events: none; z-index: 9999;">
+
+  <!-- Scrolling Text -->
   <marquee behavior="scroll" direction="left" scrollamount="5" style="color:hotpink; font-size: 18px; margin-top: 50px;">
     Si lo sabe Dios, que lo sepa el internet ✞ Are you watching, or are you being watched?
   </marquee>
 
+  <!-- Scripts -->
   <script>
+    function showCamera(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function hideCamera(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    function divineIntervention() {
+      document.getElementById('popup').style.display = 'block';
+    }
+
+    // Blessing Pop-up Logic
     const blessings = [
       "You are being watched with love.",
       "Digital salvation pending...",
@@ -168,7 +202,7 @@
       "Ave María.exe has crashed.",
       "404: Sin not found (yet)."
     ];
-  
+
     function showBlessing() {
       const popup = document.getElementById("blessing-popup");
       const text = document.getElementById("blessing-text");
@@ -177,30 +211,19 @@
       popup.style.top = Math.floor(Math.random() * (window.innerHeight - 200)) + "px";
       popup.style.left = Math.floor(Math.random() * (window.innerWidth - 300)) + "px";
     }
-  
-    // Show a blessing every 15–30 seconds
+
     setInterval(() => {
       if (Math.random() < 0.5) showBlessing();
     }, 15000);
 
-
+    // Floating Follower
+    const follower = document.getElementById('mouseFollower');
+    document.addEventListener('mousemove', function(e) {
+      setTimeout(() => {
+        follower.style.left = (e.pageX + 10) + 'px';
+        follower.style.top = (e.pageY + 10) + 'px';
+      }, 30);
+    });
   </script>
-
-<script>
-  const follower = document.getElementById('mouseFollower');
-
-  document.addEventListener('mousemove', function(e) {
-    setTimeout(() => {
-      follower.style.left = (e.pageX + 10) + 'px';
-      follower.style.top = (e.pageY + 10) + 'px';
-    }, 30); // slight delay to give it a floaty feel
-  });
-</script>
-
-
-<img id="mouseFollower" src="https://media.tenor.com/N9TfSHKibSoAAAAj/security-camera.gif" 
-     style="position: fixed; top: 0; left: 0; width: 50px; pointer-events: none; z-index: 9999;">
-
-
 </body>
 </html>
