@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DivineSurveillance_1999</title>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
   <style>
+    
     body {
       background: black url("stardust.avif");
       color: lime;
@@ -36,19 +39,6 @@
       height: 500px;
     }
 
-    .popup {
-      position: fixed;
-      top: 20%;
-      left: 35%;
-      width: 300px;
-      background: rgb(255, 255, 255);
-      border: 3px double rgb(255, 0, 200);
-      padding: 20px;
-      box-shadow: 0 0 20px white;
-      display: none;
-      z-index: 999;
-    }
-
     .popup button {
       background: black;
       color: white;
@@ -58,22 +48,6 @@
       cursor: pointer;
     }
 
-    #blessing-popup {
-      display: none;
-      position: fixed;
-      top: 100px;
-      left: 100px;
-      width: 250px;
-      background-color: #fff;
-      border: 3px double #0000ff;
-      box-shadow: 5px 5px #888;
-      font-family: 'Verdana', sans-serif;
-      font-size: 14px;
-      z-index: 1000;
-      padding: 10px;
-      color: black;
-      text-align: left;
-    }
   </style>
 </head>
 <body onload="setTimeout(divineIntervention, 7000)">
@@ -81,15 +55,15 @@
     <img src="cross2.gif" alt="Welcome Child">
     <br>
     <img src="godss.png" alt="" style="max-width: 600px; margin: auto;">
-    <h1>✞ DivineSurveillance_1999 ✞</h1>
+    <h1 style="font-family: 'UnifrakturCook', cursive;">DivineSurveillance_1999</h1>
     <img src="angel.gif" alt="">
   </div>
 
-  <div class="prayer">
+  <!-- <div class="prayer">
     <p><span style="color:white;">Padre Nuestro</span> que estás en los <span style="color:#ff00ff;">cielos,</span> glitchificado sea tu <span style="color:#00ffff;">nombre</span>...</p>
-    <p>as you scroll, the prayer corrupts... <br><em>is it divine... or digital?</em></p>
-
-    <div class="digital-prayer" style="max-width: 600px; margin: auto; font-family: 'Courier New', monospace; color: #00ffcc; line-height: 1.7; background: rgba(0,0,0,0.6); padding: 20px; border: 1px dashed #ff00ff;">
+    <p>as you scroll, the prayer corrupts... <br><em>is it divine... or digital?</em></p> -->
+<br>
+    <div class="digital-prayer" style="max-width: 600px; margin: auto; font-family: 'Courier New', monospace; color: #ffffff; line-height: 1.7; background: rgba(0,0,0,0.6); padding: 20px; border: 1px dashed #ff00ff;">
       <p>
         My mom used to tell me,<br>
         <em>that God was always watching</em><br>
@@ -147,49 +121,96 @@
 
   <!-- Hover Camera Zones -->
   <div class="hover-zone" style="top: 500px; left: 120px;" onmouseover="showCamera('cam1')" onmouseout="hideCamera('cam1')"></div>
-  <img id="cam1" class="surveillance" src="securitycamera2.gif" style="top: 500px; left: 120px;">
+  <img id="cam1" class="surveillance" src="security.gif" style="top: 500px; left: 120px;">
 
   <div class="hover-zone" style="top: 500px; right: 120px;" onmouseover="showCamera('cam2')" onmouseout="hideCamera('cam2')"></div>
   <img id="cam2" class="surveillance" src="zoomsecurity.gif" style="top: 500px; right: 120px;">
 
   <!-- Divine Intervention Pop-up -->
-  <div class="popup" id="popup">
-    <h3>✞ God is watching you ✞</h3>
-    <p>Believe</p>
-    <button onclick="document.getElementById('popup').style.display='none'">OK</button>
+  <div id="popup" style="
+  display: none;
+  position: fixed;
+  top: 150px;
+  left: 150px;
+  width: 280px;
+  color: black;
+  border: 2px solid #000;
+  box-shadow: 5px 5px #888;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 13px;
+  background: #ece9d8;
+  z-index: 1000;
+  text-align: left;">
+  <div style="background: #000000; color: white; padding: 4px 8px; font-weight: bold;">
+    GOD.EXE
+  </div>
+  <div style="padding: 10px;">
+    <img src="jesus.gif"
+         width="20" style="vertical-align: middle; margin-right: 8px;">
+    ✞ God is watching you ✞<br><br>
+    Believe.<br><br>
+    <button onclick="document.getElementById('popup').style.display='none'"
+            style="font-family: Tahoma, sans-serif; font-size: 12px; padding: 2px 8px; background: #d4d0c8; border: 1px solid #808080;">
+      OK
+    </button>
+  </div>
+</div>
+
+<!-- Windows 95 Style Blessing Pop-up -->
+<div id="blessing-popup" style="
+  display: none;
+  position: fixed;
+  top: 100px;
+  color: black;
+  left: 100px;
+  width: 280px;
+  border: 2px solid #000;
+  box-shadow: 5px 5px #888;
+  font-family: 'Tahoma', sans-serif;
+  font-size: 13px;
+  background: #ece9d8;
+  z-index: 1000;
+  text-align: left;
+">
+
+  <div style="background: #000000; color: white; padding: 4px 8px; font-weight: bold;">
+    BLESSING.EXE
   </div>
 
-  <!-- Blessing Pop-up -->
-  <div id="blessing-popup">
-    <strong>Blessing.exe</strong><br><br>
+  <div style="padding: 10px;">
+    <img src="heart2.gif" width="20" style="vertical-align: middle; margin-right: 8px;">
     <span id="blessing-text">You are being watched with love.</span><br><br>
-    <button onclick="document.getElementById('blessing-popup').style.display='none'">OK</button>
+
+    <button onclick="document.getElementById('blessing-popup').style.display='none'"
+            style="font-family: Tahoma, sans-serif; font-size: 12px; padding: 2px 8px; background: #d4d0c8; border: 1px solid #808080;">
+      OK
+    </button>
   </div>
+</div>
+
 
   <!-- Floating Surveillance Follower -->
   <img id="mouseFollower" src="https://media.tenor.com/N9TfSHKibSoAAAAj/security-camera.gif" 
        style="position: fixed; top: 0; left: 0; width: 50px; pointer-events: none; z-index: 9999;">
 
   <!-- Scrolling Text -->
-  <marquee behavior="scroll" direction="left" scrollamount="5" style="color:hotpink; font-size: 18px; margin-top: 50px;">
-    Si lo sabe Dios, que lo sepa el internet ✞ Are you watching, or are you being watched?
+  <marquee behavior="scroll" direction="left" scrollamount="5" style="color:rgb(255, 6, 180); font-size: 25px; margin-top: 50px;">
+     ✞ Are you watching, or are you being watched? ✞
   </marquee>
 
-  <!-- Scripts -->
   <script>
     function showCamera(id) {
       document.getElementById(id).style.display = 'block';
     }
-
+  
     function hideCamera(id) {
       document.getElementById(id).style.display = 'none';
     }
-
+  
     function divineIntervention() {
       document.getElementById('popup').style.display = 'block';
     }
-
-    // Blessing Pop-up Logic
+  
     const blessings = [
       "You are being watched with love.",
       "Digital salvation pending...",
@@ -202,7 +223,7 @@
       "Ave María.exe has crashed.",
       "404: Sin not found (yet)."
     ];
-
+  
     function showBlessing() {
       const popup = document.getElementById("blessing-popup");
       const text = document.getElementById("blessing-text");
@@ -211,11 +232,11 @@
       popup.style.top = Math.floor(Math.random() * (window.innerHeight - 200)) + "px";
       popup.style.left = Math.floor(Math.random() * (window.innerWidth - 300)) + "px";
     }
-
+  
     setInterval(() => {
       if (Math.random() < 0.5) showBlessing();
     }, 15000);
-
+  
     // Floating Follower
     const follower = document.getElementById('mouseFollower');
     document.addEventListener('mousemove', function(e) {
@@ -225,5 +246,6 @@
       }, 30);
     });
   </script>
+  
 </body>
 </html>
