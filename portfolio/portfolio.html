@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="./CSS/portfolio.css">
+    </head>
+    <body>
+        <div id="portfolio-container">
+            <div class="scroll-sparkles">
+              ✨ ✨ ✨ ✨ ✨
+            </div>
+
+            <h1>Fabiola Larios – Portfolio</h1>
+
+            <div class="filter-bar">
+                <button class="filter-button" data-type="all">🌟 All</button>
+                <button class="filter-button" data-type="installation">🖼️ Installation</button>
+                <button class="filter-button" data-type="net-art">🌐 Net Art</button>
+                <button class="filter-button" data-type="ai">🤖 AI</button>
+                <button class="filter-button" data-type="video">🎞️ Video</button>
+            </div>
+
+            <div id="portfolio-grid">
+                <!-- Installation Projects -->
+                <div class="project installation">
+                    <h2>PrincessCam Dreamland</h2>
+                    <p>Installation – Surveillance Cameras, Pink Disney TVs, Mirrors</p>
+                </div>
+                <div class="project installation">
+                    <h2>Surveillance Cutie</h2>
+                    <p>Installation – Bedazzled Pink TVs, Cameras, Mylar, LED</p>
+                </div>
+                <div class="project installation">
+                    <h2>Internet Entanglement</h2>
+                    <p>Installation – Ethernet Cables, LED Outline</p>
+                </div>
+                <div class="project installation">
+                    <h2>Eyeseeyou.watch</h2>
+                    <p>Installation – Surveillance Camera, Mirror, Mannequin</p>
+                </div>
+                <div class="project installation">
+                    <h2>Ode to Obsolescence</h2>
+                    <p>Installation – Laptops, Iridescent Vinyl, LED</p>
+                </div>
+                <div class="project installation">
+                    <h2>my Barbi[e] ritu@l</h2>
+                    <p>Installation – Windows95 Simulation, CD-ROM Rituals</p>
+                </div>
+                <div class="project installation">
+                    <h2>Gems of Obsolescence</h2>
+                    <p>Installation – Bedazzled Laptop, Mirror</p>
+                </div>
+                <div class="project installation">
+                    <h2>@5.5544811,-0.2278805,838m</h2>
+                    <p>Installation – E-waste + AI Interpolation Video</p>
+                </div>
+
+                <!-- Net-Art + AI + Video -->
+                <div class="project net-art ai">
+                    <h2>Born into BIAS</h2>
+                    <p>Net Art + AI – Stereotypes in Image Generators</p>
+                </div>
+                <div class="project net-art installation ai video">
+                    <h2>#ellassomostodas</h2>
+                    <p>Net Art / AI / Video – Machine Learning on Femicide Testimonies</p>
+                </div>
+                <div class="project ai video">
+                    <h2>Wild Wired World</h2>
+                    <p>AI Video – Surveillance, Data, Internet History</p>
+                </div>
+                <div class="project net-art">
+                    <h2>Pizza Poem</h2>
+                    <p>Net Art – SMS + Interactive Net Narrative</p>
+                </div>
+                <div class="project net-art video">
+                    <h2>dontwannabeontheinternet.com</h2>
+                    <p>Net Art / Video – Non-consensual surveillance, bodily vulnerability</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const buttons = document.querySelectorAll('.filter-button');
+            const projects = document.querySelectorAll('.project');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const type = button.getAttribute('data-type');
+                    projects.forEach(proj => {
+                        if (type === 'all' || proj.classList.contains(type)) {
+                            proj.style.display = 'block';
+                        } else {
+                            proj.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
