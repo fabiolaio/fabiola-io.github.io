@@ -11,19 +11,6 @@ body {
     padding: 0;
 }
 
-.window.wide {
-    width: 98vw;
-    height: 92vh;
-    margin: 2vh auto;
-    background-color: white;
-    border: 2px solid;
-    border-color: #ffffff #000000 #000000 #ffffff;
-    box-shadow: 4px 4px 0 rgb(240, 113, 197);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
 .title-bar {
     background: rgb(240, 113, 197);
     color: white;
@@ -55,12 +42,39 @@ button.close {
     background-color: rgb(255, 218, 250);
 }
 
-#portfolio-container {
+a {
+    color: rgb(240, 113, 197); /* same pink you use for titles */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: hotpink;
+    text-decoration: underline;
+  }
+
+  .window.wide {
+    width: 95vw;
+    max-width: 1400px;
+    height: 92vh;
+    margin: 2vh auto;
+    background-color: white;
+    border: 2px solid;
+    border-color: #ffffff #000000 #000000 #ffffff;
+    box-shadow: 4px 4px 0 rgb(240, 113, 197);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #portfolio-container {
     width: 100%;
     padding: 20px;
     background-color: rgb(255, 240, 250);
-    position: relative;
-}
+    flex-grow: 1;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
 
 h1 {
     text-align: center;
