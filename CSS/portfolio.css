@@ -106,14 +106,14 @@ h1 {
 }
 
 .filter-button {
-    background-color: rgb(240, 113, 197);
+    background-color: #c0c0c0;;
     border: none;
     padding: 8px 16px;
     margin: 5px;
     font-family: 'Compaq';
     font-size: 16px;
-    color: white;
-    border-radius: 4px;
+    color: rgb(10, 0, 0);
+    border-radius: 0px;
     cursor: pointer;
     box-shadow: 2px 2px 0 #000000;
 }
