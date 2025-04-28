@@ -1,18 +1,90 @@
-
-.frame-container {
-    width: 800px; /* adjust as needed */
-    height: 800px; /* adjust as needed */
-    background: url('') no-repeat;
-    padding: 20px; /* adjust as needed to align your content properly within the frame */
-}
-
 @font-face {
     font-family: 'Compaq';
-    src: url(../Compaq_Port3.woff);
+  src: url(../Compaq_Port3.woff);
+  cursor: url(../CSS/cursor.png), auto;
 }
 
 body {
-    font-family: 'Compaq';
-    cursor: url('../CSS/cursor.png'), auto;
-    text-align: justify;
+    margin: 0;
+    padding: 0;
+    font-family: 'Compaq', monospace;
+    background-color: #ffc9e8; /* matching your pink aesthetic */
+    color: #000;
+}
+
+
+#bio-container {
+    padding: 20px;
+    max-width: 100%; /* ensure it doesn't overflow horizontally */
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow-y: auto;
+    flex-grow: 1;
+    height: auto;
+}
+
+
+.bio-header {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+#bio-pic {
+    width: 300px; /* adjust to your preferred width */
+    height: auto;
+    border-radius: 4px;
+}
+
+.bio-info {
+    flex: 1;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+p, ul {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Fixing scrollbar issue */
+html, body {
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+}
+
+.bio-scroll {
+    overflow-y: auto;
+    max-height: 420px; /* Adjust based on your new small window */
+    padding-right: 10px;
+}
+
+/* Make the scrollbar thicker and nice */
+.bio-scroll::-webkit-scrollbar {
+    width: 10px;
+}
+
+.bio-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.bio-scroll::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
 }

@@ -52,10 +52,11 @@ a {
   }
 
   .window.wide {
-    width: 95vw;
-    max-width: 1400px;
-    height: 92vh;
-    margin: 2vh auto;
+    width: 800px;
+    max-width: 90vw;
+    height: 800px;
+    max-height: 100vh;
+    margin: auto;
     background-color: white;
     border: 2px solid;
     border-color: #ffffff #000000 #000000 #ffffff;
@@ -64,10 +65,11 @@ a {
     flex-direction: column;
     position: relative;
     overflow: hidden;
-  }
+}
   
   #portfolio-container {
     width: 100%;
+    height: 100vh;
     padding: 20px;
     background-color: rgb(255, 240, 250);
     flex-grow: 1;
