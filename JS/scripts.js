@@ -82,3 +82,15 @@ function updateClock() {
 
     document.getElementById('clock').textContent = strTime;
 }
+
+const filterButtons = document.querySelectorAll('.filter-button');
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Remove active from all buttons
+    filterButtons.forEach(btn => btn.classList.remove('active-filter'));
+
+    // Add active to the clicked button
+    button.classList.add('active-filter');
+  });
+});
