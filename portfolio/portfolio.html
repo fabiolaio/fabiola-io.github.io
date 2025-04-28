@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Portfolio</title>
-        <link rel="stylesheet" type="text/css" href="../CSS/portfolio.css">
+        <link rel="stylesheet" type="text/css" href="../portfolio/portfolio.css">
     </head>
     <body>
         <div id="portfolio-container">
@@ -99,23 +99,7 @@
                 </div>
             </div>
         </div>
-
-        <script>
-            const buttons = document.querySelectorAll('.filter-button');
-            const projects = document.querySelectorAll('.project');
-
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const type = button.getAttribute('data-type');
-                    projects.forEach(proj => {
-                        if (type === 'all' || proj.classList.contains(type)) {
-                            proj.style.display = 'block';
-                        } else {
-                            proj.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        </script>
+        
+        <script src="portfolio.js"></script>
     </body>
 </html>
