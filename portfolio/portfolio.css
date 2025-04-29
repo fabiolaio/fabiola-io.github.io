@@ -1,15 +1,21 @@
+html body .window {
+    overflow: visible !important;
+}
+
 @font-face {
     font-family: 'Compaq';
     src: url(../Compaq_Port3.woff);
 }
 
 body {
-    font-family: 'Compaq';
     cursor: url('../CSS/cursor.png'), auto;
-    background-color: rgb(255, 218, 250);
-    margin: 0;
-    padding: 0;
-}
+        font-family: 'Compaq', sans-serif;
+        background-color: rgb(255, 218, 250);
+        color: rgb(10, 0, 0); /* Or whatever pink or dark color you want */
+        margin: 0;
+        padding: 0;
+    }
+
 
 .title-bar {
     background: rgb(240, 113, 197);
@@ -52,30 +58,56 @@ a {
   }
 
   .window.wide {
+    background: rgb(255, 218, 250);
     width: 800px;
-    max-width: 90vw;
+    max-width: 0vw;
     height: 800px;
     max-height: 100vh;
     margin: auto;
     background-color: white;
     border: 2px solid;
     border-color: #ffffff #000000 #000000 #ffffff;
-    box-shadow: 4px 4px 0 rgb(240, 113, 197);
+    box-shadow: 4px 4px 0 rgb(255, 218, 250);
     display: flex;
     flex-direction: column;
     position: relative;
-    overflow: hidden;
+    overflow: visible; /* <-- important!! not hidden!! */
 }
   
-  #portfolio-container {
+#portfolio-container {
     width: 100%;
-    height: 100vh;
     padding: 20px;
-    background-color: rgb(255, 240, 250);
+    background: rgb(255, 218, 250);
     flex-grow: 1;
-    overflow-y: auto;
+    overflow: visible; /* important! */
+    position: relative; /* important for absolute sparkles */
     box-sizing: border-box;
-  }
+}
+
+  .scroll-sparkles {
+    position: absolute;
+    top: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: hotpink;
+    animation: sparkle-scroll 3s infinite linear;
+    pointer-events: none;
+    z-index: 999;
+}
+
+@keyframes sparkle-scroll {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      text-shadow: 0 0 4px hotpink;
+    }
+    50% {
+      transform: translateX(-50%) translateY(15px);
+      opacity: 0.7;
+      text-shadow: 0 0 8px pink;
+    }
+}
 
 h1 {
     text-align: center;
@@ -86,8 +118,8 @@ h1 {
     margin-top: 30px;
     padding: 15px;
     border: 2px dashed rgb(240, 113, 197);
-    background-color: #fff0fa;
-    border-radius: 10px;
+    background: rgb(255, 218, 250);
+    border-radius: 0px;
 }
 
 .project h2 {
@@ -121,31 +153,13 @@ h1 {
 }
 
 .filter-button:hover {
-    background-color: hotpink;
+    background-color: rgb(255, 0, 170);
     color: white;
 }
 
 .active-filter {
-    background-color: hotpink !important;
+    background-color: rgb(255, 0, 170) !important;
     color: white !important;
     box-shadow: inset 3px 3px 0 #000000, inset -1px -1px 0 #ffffff;
     transform: translateY(2px);
-}
-
-/* Sparkles animation stays the same */
-.scroll-sparkles {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px 0;
-    font-size: 24px;
-    color: hotpink;
-    animation: sparkle-scroll 3s infinite linear;
-    pointer-events: none;
-}
-
-@keyframes sparkle-scroll {
-    0%, 100% { transform: translateY(0); opacity: 1; text-shadow: 0 0 4px hotpink; }
-    50% { transform: translateY(15px); opacity: 0.7; text-shadow: 0 0 8px pink; }
 }
