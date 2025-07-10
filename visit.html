@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Visit Fabiola Larios</title>
+
+  <!-- Win-95 skin / pink chrome stays the same -->
+  <link rel="stylesheet" href="./portfolio/portfolio.css" />
+</head>
+
+<!-- let the page scroll if the window grows taller than the viewport -->
+<body style="margin:0; overflow:auto;">
+
+  <!-- faux window (auto-height now) -->
+  <div class="window"
+       style="width:90vw;               /* fixed width so it matches your other pop-ups  */
+              margin:5vh auto;
+              border:2px solid #ff0095;
+              background:#fff;          /* optional – keeps it clean under the iframes  */
+              padding:0;
+              box-sizing:border-box;">
+
+    <!-- (title bar markup goes here, if you use one) -->
+
+    <!-- PANORAMA 1 -------------------------------------------------------- -->
+    <div style="position:relative; width:100%; padding-top:56.25%;  /* 16:9 box  */">
+      <iframe
+        src="https://momento360.com/e/u/cd48072b30054799ba1d9ffdfebae206?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=100&size=large&display-plan=true"
+        allowfullscreen
+        loading="lazy"
+        style="position:absolute; top:0; left:0;
+               width:100%; height:100%; border:none;">
+      </iframe>
+    </div>
+
+    <!-- PANORAMA 2 -------------------------------------------------------- -->
+    <div style="position:relative; width:100%; padding-top:56.25%;  /* same ratio */">
+      <iframe
+        src="https://momento360.com/e/u/378984eb985f416d86d3e17133efd6fa?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=100&size=large&display-plan=true"
+        allowfullscreen
+        loading="lazy"
+        style="position:absolute; top:0; left:0;
+               width:100%; height:100%; border:none;">
+      </iframe>
+    </div>
+
+  </div>
+
+</body>
+</html>
