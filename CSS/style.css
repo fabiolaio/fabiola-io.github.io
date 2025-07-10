@@ -475,8 +475,8 @@ body {
     list-style: none; /* add this line */
     color: #0a0000;
     cursor: pointer;
-    padding: 10px;
-    position: relative;
+padding: 14px;    
+position: relative;
     cursor: url(../CSS/cursor.png), auto;
 }
 

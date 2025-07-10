@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fabiola Larios – Studio</title>
+
+  <!-- your existing stylesheet stays the same -->
+  <link rel="stylesheet" href="./portfolio/portfolio.css" />
+</head>
+
+<!-- 1 ▪ prevent the page itself from scrolling -->
+<body style="margin:0; overflow:hidden;">
+
+  <!-- 2 ▪ the faux-window wrapper -->
+  <div class="window"
+       style="width:90vw; height:90vh;            /* size it once */
+              margin:5vh auto;                    /* center on screen */
+              border:2px solid #ff0095;             /* keep your chrome */
+              display:flex; flex-direction:column;
+              overflow:hidden;">                 <!-- ✨ no scrollbars -->
+
+    <!-- (title-bar markup would go here if you have one) -->
+
+    <!-- 3 ▪ content area that flexes and never overflows -->
+    <div class="content"
+         style="flex:1 1 auto; min-height:0; overflow:hidden;">
+
+      <!-- 4 ▪ iframe fills its box perfectly -->
+      <iframe
+        src="https://momento360.com/e/u/fd0861891d284eff90e0995a727186fd?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=100&size=large&display-plan=true"
+        allowfullscreen
+        loading="lazy"
+        style="width:100%; height:100%; border:none;">
+      </iframe>
+
+    </div>
+  </div>
+
+</body>
+</html>
