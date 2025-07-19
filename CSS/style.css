@@ -548,4 +548,4 @@ position: relative;
 #start-menu a:visited {
     cursor: url(../CSS/cursor.png), auto;
     color: inherit; /* Ensures the color remains the same even after the link is clicked */
-}
+}    
