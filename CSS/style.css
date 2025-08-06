@@ -549,3 +549,35 @@ position: relative;
     cursor: url(../CSS/cursor.png), auto;
     color: inherit; /* Ensures the color remains the same even after the link is clicked */
 }    
+
+.fake-instagram-embed {
+    background: #fff;
+    border: 2px solid #ff69b4;
+    border-radius: 6px;
+    box-shadow: 0 0 6px hotpink;
+    max-width: 480px;
+    margin: 20px auto;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+  }
+  
+  .fake-instagram-embed img {
+    width: 100%;
+    display: block;
+    border-radius: 6px 6px 0 0;
+  }
+  
+  .fake-instagram-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #660033;
+    background-color: #ffe6f2;
+    border-top: 1px dashed #ffb6c1;
+  }
+  
+  .fake-instagram-footer img {
+    width: 18px;
+    height: 18px;
+  }
