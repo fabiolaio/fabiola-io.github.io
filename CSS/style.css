@@ -328,6 +328,58 @@ body {
     cursor: url(../CSS/cursor.png), auto;
 }
 
+/* MOBILE */
+@media screen and (max-width: 600px) {
+    /* Hide ALL pop-ups by default */
+    .pop-up {
+        display: none;
+    }
+
+    /* EXCEPTION: show No Vacancy pop as a tiny floating window */
+    .no-vacancy-pop {
+        display: block;
+        position: fixed;
+        bottom: 60px;       /* sit just above the Start bar */
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 300px;
+        z-index: 4;
+    }
+
+    /* Make the content compact */
+    .no-vacancy-pop .pop-up-content {
+        padding: 6px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .no-vacancy-image {
+        display: block;
+        max-width: 90%;
+        height: auto;
+        margin: -50px auto 4px auto; /* top negative margin pulls it up */
+    }
+
+    .no-vacancy-link {
+        font-size: 12px;
+        text-align: center;
+        font-family: 'Compaq';
+        text-decoration: underline;
+        cursor: url(../CSS/cursor.png), auto;
+    }
+
+    .no-vacancy-pop .pop-up-title-bar {
+        padding: 4px 6px;
+    }
+
+    .no-vacancy-pop .pop-up-title-bar p {
+        font-size: 12px;
+    }
+}
+
 #taskbar {
     z-index: 5;
     justify-content: flex-start;
