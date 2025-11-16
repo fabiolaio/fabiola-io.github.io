@@ -97,6 +97,7 @@ body {
     #desktop {
         flex-direction: row; /* changes layout to rows for smaller screens */
         flex-wrap: wrap; /* allows icons to wrap onto the next row */
+        height: calc(100vh - 60px);
     }
 
     .icon, .iconlink {
