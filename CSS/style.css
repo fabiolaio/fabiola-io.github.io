@@ -280,12 +280,12 @@ body {
         left: 50%;
         transform: translateX(-50%);
 
-        bottom: 110px; /* sits above Start bar */
+        bottom: 80px; /* sits above Start bar */
         
         width: 72%;         /* thinner window */
         max-width: 200px;   /* even thinner */
         
-        max-height: 500px;  /* TOTAL HEIGHT limit */
+        max-height: 320px;  /* TOTAL HEIGHT limit */
         overflow: hidden;   /* NO SCROLLING */
         z-index: 4;
     }
