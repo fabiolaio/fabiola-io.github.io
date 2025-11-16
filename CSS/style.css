@@ -279,12 +279,12 @@ body {
         left: 50%;
         transform: translateX(-50%);
 
-        bottom: 80px; /* sits above Start bar */
+        bottom: 110px; /* sits above Start bar */
         
         width: 72%;         /* thinner window */
-        max-width: 260px;   /* even thinner */
+        max-width: 200px;   /* even thinner */
         
-        max-height: 350px;  /* TOTAL HEIGHT limit */
+        max-height: 500px;  /* TOTAL HEIGHT limit */
         overflow: hidden;   /* NO SCROLLING */
         z-index: 4;
     }
@@ -313,7 +313,7 @@ body {
         width: 100%;
 
         /* THIS makes the image never exceed the window */
-        max-height: 220px;   /* Adjust to keep link visible */
+        max-height: 300px;   /* Adjust to keep link visible */
         height: auto;
 
         object-fit: contain; /* full image, no crop */
