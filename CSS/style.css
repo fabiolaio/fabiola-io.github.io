@@ -328,39 +328,46 @@ body {
     cursor: url(../CSS/cursor.png), auto;
 }
 
-/* MOBILE */
 @media screen and (max-width: 600px) {
-    /* Hide ALL pop-ups by default */
+    /* hide other popups */
     .pop-up {
         display: none;
     }
 
-    /* EXCEPTION: show No Vacancy pop as a tiny floating window */
+    /* No Vacancy window on mobile */
     .no-vacancy-pop {
         display: block;
         position: fixed;
-        bottom: 60px;       /* sit just above the Start bar */
         left: 50%;
-        right: auto;
         transform: translateX(-50%);
-        width: 90%;
-        max-width: 300px;
+        width: 92%;
+        max-width: 340px;
+
+        /* NEW: limit height so it fits above Start bar + Safari UI */
+        bottom: 80px; /* a bit higher */
+        max-height: calc(100vh - 160px);
+        overflow: hidden;
         z-index: 4;
     }
 
-    /* Make the content compact */
     .no-vacancy-pop .pop-up-content {
-        padding: 6px;
+        padding-top: 4px;
+        padding-bottom: 0;
+        display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+
+        /* NEW: allow scroll inside if needed */
+        overflow-y: auto;
     }
 
+    /* Image: limit vertical size so link has space */
     .no-vacancy-image {
         display: block;
-        max-width: 90%;
+        max-width: 70%;
+        max-height: 45vh;   /* <— important */
         height: auto;
-        margin: -50px auto 4px auto; /* top negative margin pulls it up */
+        margin: 0 auto 4px auto;
     }
 
     .no-vacancy-link {
@@ -369,10 +376,7 @@ body {
         font-family: 'Compaq';
         text-decoration: underline;
         cursor: url(../CSS/cursor.png), auto;
-    }
-
-    .no-vacancy-pop .pop-up-title-bar {
-        padding: 4px 6px;
+        margin-bottom: 4px;
     }
 
     .no-vacancy-pop .pop-up-title-bar p {
