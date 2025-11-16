@@ -265,109 +265,59 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-    .pop-up {
-        display: none;
-    }
-}
 
-
-/* Center this specific popup, keep original style */
-.no-vacancy-pop {
-    left: 50%;
-    right: auto;
-    transform: translate(-50%, -80%);
-    z-index: 4; /* slightly above the other pop-up */
-}
-
-/* Image inside the popup */
-.no-vacancy-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 8px;
-}
-
-/* Link style – keeps your retro feel */
-.no-vacancy-link {
-    font-family: 'Compaq';
-    text-decoration: underline;
-    cursor: url(../CSS/cursor.png), auto;
-}
-    
-
-#artwork-frame {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.title-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background:  rgb(240, 113, 197);
-    color: #ffffff;
-    font-family: 'Compaq';
-    font-weight: bold;
-    padding: 2px;
-    height: 20px;  /* Adjust this value as needed */
-    font-size: 14px;  /* Adjust this value as needed */
-
-}
-
-.close {
-    float: right;
-    font-size: 12px; /* Adjust this value to control the size of the close button. */
-    position: absolute;
-    font-family: 'Compaq';
-    font-weight: bold;
-    top: 0;
-    right: 0;
-    height:25px;
-    border-color: #ffffff #000000 #000000 #ffffff; /* top, right, bottom*/
-    cursor: url(../CSS/cursor.png), auto;
-}
-
-@media screen and (max-width: 600px) {
-    /* hide other popups */
+    /* Hide all popups on mobile by default */
     .pop-up {
         display: none;
     }
 
-    /* No Vacancy window on mobile */
+    /* Only show No Vacancy popup */
     .no-vacancy-pop {
         display: block;
         position: fixed;
+
         left: 50%;
         transform: translateX(-50%);
-        width: 92%;
-        max-width: 340px;
 
-        /* NEW: limit height so it fits above Start bar + Safari UI */
-        bottom: 80px; /* a bit higher */
-        max-height: calc(100vh - 160px);
-        overflow: hidden;
+        bottom: 80px; /* sits above Start bar */
+        
+        width: 72%;         /* thinner window */
+        max-width: 260px;   /* even thinner */
+        
+        max-height: 350px;  /* TOTAL HEIGHT limit */
+        overflow: hidden;   /* NO SCROLLING */
         z-index: 4;
     }
 
+    .no-vacancy-pop .pop-up-title-bar {
+        padding: 4px 6px;
+    }
+
+    .no-vacancy-pop .pop-up-title-bar p {
+        font-size: 12px;
+    }
+
     .no-vacancy-pop .pop-up-content {
-        padding-top: 4px;
-        padding-bottom: 0;
+        padding: 6px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: flex-start;
 
-        /* NEW: allow scroll inside if needed */
-        overflow-y: auto;
+        overflow: hidden;  /* IMPORTANT - no scroll */
     }
 
-    /* Image: limit vertical size so link has space */
+    /* Image MUST auto-fit inside the window */
     .no-vacancy-image {
         display: block;
-        max-width: 70%;
-        max-height: 45vh;   /* <— important */
+        width: 100%;
+
+        /* THIS makes the image never exceed the window */
+        max-height: 220px;   /* Adjust to keep link visible */
         height: auto;
-        margin: 0 auto 4px auto;
+
+        object-fit: contain; /* full image, no crop */
+        margin: 4px auto;
     }
 
     .no-vacancy-link {
@@ -375,14 +325,10 @@ body {
         text-align: center;
         font-family: 'Compaq';
         text-decoration: underline;
-        cursor: url(../CSS/cursor.png), auto;
-        margin-bottom: 4px;
-    }
-
-    .no-vacancy-pop .pop-up-title-bar p {
-        font-size: 12px;
+        margin-top: 2px;
     }
 }
+
 
 #taskbar {
     z-index: 5;
