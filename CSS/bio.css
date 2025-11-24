@@ -12,17 +12,15 @@ body {
     color: #000;
 }
 
-
 #bio-container {
     padding: 20px;
-    max-width: 100%; /* ensure it doesn't overflow horizontally */
+    max-width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
-    overflow-y: auto;
+    overflow-y: visible;   /* if you prefer to be explicit */
     flex-grow: 1;
     height: auto;
 }
-
 
 .bio-header {
     display: flex;
@@ -115,3 +113,11 @@ html, body {
       text-align: center;
     }
   }
+
+  /* Desktop: quitar scroll del body del iframe */
+@media screen and (min-width: 601px) {
+  html, body {
+      overflow: hidden;   /* ❌ elimina la barra grande */
+      height: 100%;
+  }
+}
