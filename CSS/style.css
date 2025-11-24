@@ -162,7 +162,7 @@ body {
 
 .window {
     position: fixed;
-    z-index: 3;
+    z-index: 20;
     top: 45%;
     left: 50%;
     width: 800px; /* specific width instead of vw */
@@ -203,7 +203,7 @@ body {
 
 .pop-up {
     position: fixed;
-    z-index: 3;
+    z-index: 10; 
     top: 50%;
     right: 10px; 
     width: 350px;
@@ -268,9 +268,9 @@ body {
 /* Center this specific popup, keep original style */
 .no-vacancy-pop {
     left: 50%;
+    z-index: 4;
     right: auto;
     transform: translate(-50%, -80%);
-    z-index: 4; /* slightly above the other pop-up */
 }
 
 /* Image inside the popup */
