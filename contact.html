@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f071c5">
+<title>contact.exe | Fabiola Larios</title>
+<style>
+  /* Uses the colors, flat window styling and typography of fabiola.io.
+     Everything is scoped to this page so it won't change the main site CSS. */
+  @font-face { font-family: 'Compaq'; src: url('../CSS/Compaq.woff2') format('woff2'); font-display: swap; }
+  :root { --pink: rgb(240,113,197); --light: rgb(255,218,250); --dark:#000; }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:25px;
+    background:var(--light); color:#111; font-family:'Compaq',Tahoma,Arial,sans-serif; font-size:14px; }
+  .contact-exe { width:min(100%,540px); background:var(--light); border:2px solid;
+    border-color:white black black white; box-shadow:2px 2px 0 #777; }
+  .title-bar { min-height:25px; background:var(--pink); color:white; display:flex; justify-content:space-between;
+    align-items:center; padding:3px 5px; font-weight:bold; font-size:14px; }
+  .win-controls { display:flex; gap:3px; }
+  .win-control { width:18px; height:18px; display:grid; place-items:center; background:#f5c8e8;
+    border:1px solid; border-color:white #333 #333 white; color:black; text-decoration:none; font: bold 12px Tahoma, sans-serif; }
+  .inner { padding:25px 24px 20px; }
+  .fileline { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+  .file-icon { display:grid; place-items:center; width:36px; height:38px; flex:0 0 36px; background:white;
+    border:1px solid black; box-shadow:3px 3px 0 #f071c5; font: bold 17px 'Courier New',monospace; color:var(--pink); }
+  h1 { font-size:20px; margin:0 0 3px; font-weight:bold; }
+  .sub { margin:0; font-size:12px; }
+  .well { border:2px solid; border-color:#777 white white #777; padding:19px 18px; background:#ffe5f5; }
+  .question { font-size:18px; font-weight:bold; margin:0 0 18px; }
+  .checkline { display:flex; gap:11px; align-items:center; cursor:pointer; width:fit-content; font-size:15px; }
+  .checkline input { appearance:none; width:18px; height:18px; margin:0; flex-shrink:0;
+    border:2px solid; border-color:#555 white white #555; background:white; display:grid; place-items:center; }
+  .checkline input:checked::after { content:'✓'; font: bold 18px Arial,sans-serif; line-height:1; color:#c51d81; }
+  .checkline input:focus-visible, button:focus-visible, a:focus-visible { outline:2px dotted #000; outline-offset:3px; }
+  .buttons { display:flex; justify-content:flex-end; margin-top:16px; }
+  .win-button { font:inherit; color:#000; background:#f7cee9; padding:8px 15px; cursor:pointer;
+    border:2px solid; border-color:white #555 #555 white; box-shadow:1px 1px #000; }
+  .win-button:active { border-color:#555 white white #555; box-shadow:none; }
+  .win-button:disabled { opacity:.6; cursor:default; }
+  .status { margin-top:22px; padding-top:9px; border-top:1px solid #ecaccf; font-size:12px; min-height:29px; }
+  .progress { display:none; padding:2px; height:20px; border:2px inset #888; margin-top:15px; background:white; }
+  .progress-fill { background:repeating-linear-gradient(90deg,var(--pink) 0 12px, transparent 12px 15px); height:100%; width:0; transition:width .6s; }
+  [hidden] { display:none !important; }
+  .result { text-align:center; padding:12px 0 8px; }
+  .result h2 { font-size:18px; margin:6px 0 15px; }
+  .result p { margin:0 0 16px; }
+  .email { font-size:16px; font-weight:bold; overflow-wrap:anywhere; margin:26px 0 !important; }
+  a, a:visited { color:rgb(240,113,197); }
+  a:hover { color:hotpink; }
+  .footer { margin-top:23px; padding-top:13px; border-top:1px solid #edaccf; text-align:center; font-size:11px; line-height:1.5; }
+  .error { color:#b00052; }
+  @media(max-width:480px) { body { padding:12px; } .inner {padding:21px 15px 17px;} h1{font-size:18px;} .question{font-size:16px;} }
+  @media(prefers-reduced-motion:reduce) { .progress-fill {transition:none;} }
+</style>
+</head>
+<body>
+<main class="contact-exe" aria-label="contact.exe">
+  <div class="title-bar">
+    <span>contact.exe</span>
+    <div class="win-controls" aria-hidden="true"><span class="win-control">_</span><span class="win-control">□</span><span class="win-control">×</span></div>
+  </div>
+  <div class="inner">
+    <section id="verification">
+      <div class="fileline">
+        <span class="file-icon" aria-hidden="true">?</span>
+        <div><h1>Identity Verification</h1><p class="sub">Fabiola Larios / contact request</p></div>
+      </div>
+      <p>Before contacting the artist, please confirm your identity.</p>
+      <div class="well">
+        <p class="question">ARE YOU HUMAN?</p>
+        <label class="checkline"><input type="checkbox" id="humanCheck"><span>I think so.</span></label>
+      </div>
+      <div class="buttons"><button class="win-button" id="verifyButton" type="button">VERIFY IDENTITY</button></div>
+      <div class="progress" id="progress" role="progressbar" aria-label="Identity verification progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="status" id="status" role="status" aria-live="polite">Status: Awaiting user input_</div>
+    </section>
+    <section id="result" class="result" hidden aria-live="polite">
+      <h2>HUMANITY CANNOT BE CONFIRMED.</h2>
+      <p>Access granted anyway.</p>
+      <p class="email"><a id="emailLink"></a></p>
+      <button class="win-button" id="copyButton" type="button">COPY EMAIL</button>
+      <div class="footer">This system does not guarantee that you are human.<br>Neither do you.</div>
+    </section>
+  </div>
+</main>
+<script>
+(function () {
+  const check = document.getElementById('humanCheck');
+  const verify = document.getElementById('verifyButton');
+  const status = document.getElementById('status');
+  const progress = document.getElementById('progress');
+  const fill = document.getElementById('progressFill');
+  const verification = document.getElementById('verification');
+  const result = document.getElementById('result');
+  const link = document.getElementById('emailLink');
+  const copy = document.getElementById('copyButton');
+  const email = () => ['fabiolalariosm','gmail.com'].join('@');
+  verify.addEventListener('click', function () {
+    if (!check.checked) {
+      status.textContent = 'ERROR: Please acknowledge your possible humanity.';
+      status.classList.add('error');
+      return;
+    }
+    status.classList.remove('error');
+    check.disabled = true;
+    verify.disabled = true;
+    progress.style.display = 'block';
+    status.textContent = 'Scanning identity...';
+    setTimeout(() => { fill.style.width = '50%'; progress.setAttribute('aria-valuenow','50'); status.textContent = 'Analyzing human behavior...'; }, 500);
+    setTimeout(() => { fill.style.width = '100%'; progress.setAttribute('aria-valuenow','100'); status.textContent = 'Verification inconclusive.'; }, 1300);
+    setTimeout(() => {
+      verification.hidden = true;
+      result.hidden = false;
+      link.textContent = email();
+      link.href = 'mailto:' + email();
+    }, 2100);
+  });
+  copy.addEventListener('click', async function () {
+    try { await navigator.clipboard.writeText(email()); copy.textContent = 'COPIED!'; }
+    catch (_) { copy.textContent = 'USE THE EMAIL LINK ABOVE'; }
+  });
+})();
+</script>
+</body>
+</html>
