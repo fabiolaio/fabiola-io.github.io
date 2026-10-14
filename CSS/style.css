@@ -719,3 +719,11 @@ position: relative;
     width: 18px;
     height: 18px;
   }
+  
+a, a:visited {
+    color: rgb(240, 113, 197);
+}
+
+a:hover {
+    color: hotpink;
+}
