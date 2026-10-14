@@ -1,0 +1,166 @@
+<!-- CONTACT.EXE POP-UP: paste this block before </body> in index.html.
+     Open it from any existing icon using: onclick="openContactPopup(); return false;"
+     Example: <a href="#" onclick="openContactPopup(); return false;">contact.exe</a>
+     No standalone page or full-screen background needed. -->
+<style>
+  #fl-contact-popup, #fl-contact-popup * { box-sizing: border-box; }
+  #fl-contact-popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(390px, calc(100vw - 28px));
+    max-height: calc(100dvh - 55px);
+    overflow: auto;
+    background: rgb(255, 218, 250);
+    border: 2px solid;
+    border-color: #fff #000 #000 #fff;
+    box-shadow: 2px 2px 0 #555;
+    color: #000;
+    font-family: 'Compaq', Tahoma, Arial, sans-serif;
+    font-size: 14px;
+  }
+  #fl-contact-popup.is-open { display: block; }
+  #fl-contact-popup .fl-contact-title {
+    height: 26px;
+    padding: 2px 3px 2px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: rgb(240, 113, 197);
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  #fl-contact-popup .fl-contact-x,
+  #fl-contact-popup .fl-contact-button {
+    font-family: inherit;
+    background: #f5d9ed;
+    color: #000;
+    border: 2px solid;
+    border-color: #fff #555 #555 #fff;
+    border-radius: 0;
+    cursor: pointer;
+  }
+  #fl-contact-popup .fl-contact-x { width: 22px; height: 20px; padding: 0; font-size: 14px; line-height: 14px; font-weight: bold; }
+  #fl-contact-popup .fl-contact-button { padding: 7px 15px; font-size: 13px; }
+  #fl-contact-popup .fl-contact-button:active,
+  #fl-contact-popup .fl-contact-x:active { border-color: #555 #fff #fff #555; }
+  #fl-contact-popup .fl-contact-button:focus-visible,
+  #fl-contact-popup .fl-contact-x:focus-visible,
+  #fl-contact-popup input:focus-visible { outline: 2px solid #af0080; outline-offset: 2px; }
+  #fl-contact-popup .fl-contact-content { padding: 22px 18px 18px; }
+  #fl-contact-popup h2 { margin: 0 0 13px; font-size: 18px; color: #000; }
+  #fl-contact-popup p { margin: 0 0 17px; line-height: 1.5; color: #000; }
+  #fl-contact-popup .fl-contact-field {
+    background: #ffeef9;
+    border: 2px solid;
+    border-color: #8c6680 #fff #fff #8c6680;
+    padding: 16px 13px;
+    margin: 14px 0 18px;
+  }
+  #fl-contact-popup .fl-contact-question { display: block; font-weight: bold; margin-bottom: 15px; }
+  #fl-contact-popup .fl-contact-check { display: flex; gap: 9px; align-items: center; cursor: pointer; }
+  #fl-contact-popup input[type="checkbox"] { width: 17px; height: 17px; accent-color: rgb(240, 113, 197); }
+  #fl-contact-popup .fl-contact-actions { display: flex; justify-content: flex-end; }
+  #fl-contact-popup .fl-contact-status { min-height: 20px; margin: 10px 0 0; font-size: 12px; }
+  #fl-contact-popup .fl-contact-result { display: none; text-align: center; }
+  #fl-contact-popup .fl-contact-result h2 { font-size: 15px; }
+  #fl-contact-popup a, #fl-contact-popup a:visited { color: rgb(240, 113, 197); overflow-wrap: anywhere; }
+  #fl-contact-popup a:hover { color: hotpink; }
+  #fl-contact-popup .fl-contact-mail { margin: 22px 0; font-weight: bold; }
+  #fl-contact-popup .fl-contact-foot { margin: 18px 0 0; font-size: 11px; }
+</style>
+
+<div id="fl-contact-popup" role="dialog" aria-modal="false" aria-labelledby="fl-contact-heading" aria-hidden="true">
+  <div class="fl-contact-title">
+    <span>contact.exe - Identity Verification</span>
+    <button type="button" class="fl-contact-x" id="fl-contact-close" aria-label="Close contact window">×</button>
+  </div>
+  <div class="fl-contact-content">
+    <section id="fl-contact-verification">
+      <h2 id="fl-contact-heading">Identity Verification</h2>
+      <p>Before contacting the artist, please confirm your identity.</p>
+      <div class="fl-contact-field">
+        <span class="fl-contact-question">ARE YOU HUMAN?</span>
+        <label class="fl-contact-check"><input type="checkbox" id="fl-contact-human"> <span>I think so.</span></label>
+      </div>
+      <div class="fl-contact-actions"><button type="button" class="fl-contact-button" id="fl-contact-verify">VERIFY IDENTITY</button></div>
+      <p class="fl-contact-status" id="fl-contact-status" role="status" aria-live="polite">Status: Awaiting user input_</p>
+    </section>
+    <section class="fl-contact-result" id="fl-contact-result">
+      <h2>HUMANITY CANNOT BE CONFIRMED.</h2>
+      <p>Access granted anyway.</p>
+      <p class="fl-contact-mail"><a id="fl-contact-email" href="#"></a></p>
+      <button type="button" class="fl-contact-button" id="fl-contact-copy">COPY EMAIL</button>
+      <p class="fl-contact-foot">This system does not guarantee that you are human. Neither do you.</p>
+    </section>
+  </div>
+</div>
+<script>
+(function () {
+  const popup = document.getElementById('fl-contact-popup');
+  const verify = document.getElementById('fl-contact-verify');
+  const close = document.getElementById('fl-contact-close');
+  const checkbox = document.getElementById('fl-contact-human');
+  const status = document.getElementById('fl-contact-status');
+  const verification = document.getElementById('fl-contact-verification');
+  const result = document.getElementById('fl-contact-result');
+  const emailLink = document.getElementById('fl-contact-email');
+  const copy = document.getElementById('fl-contact-copy');
+  let timeoutId;
+  let lastFocus;
+  const email = () => 'fabiolalariosm' + '@' + 'gmail.com';
+
+  window.openContactPopup = function () {
+    lastFocus = document.activeElement;
+    clearTimeout(timeoutId);
+    checkbox.checked = false;
+    checkbox.disabled = false;
+    verify.disabled = false;
+    status.textContent = 'Status: Awaiting user input_';
+    verification.style.display = 'block';
+    result.style.display = 'none';
+    popup.classList.add('is-open');
+    popup.setAttribute('aria-hidden', 'false');
+    close.focus();
+  };
+
+  function closeContactPopup() {
+    clearTimeout(timeoutId);
+    popup.classList.remove('is-open');
+    popup.setAttribute('aria-hidden', 'true');
+    if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+  }
+  close.addEventListener('click', closeContactPopup);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && popup.classList.contains('is-open')) closeContactPopup();
+  });
+  verify.addEventListener('click', () => {
+    if (!checkbox.checked) {
+      status.textContent = 'ERROR: Please acknowledge your possible humanity.';
+      return;
+    }
+    verify.disabled = true;
+    checkbox.disabled = true;
+    status.textContent = 'Checking identity...';
+    timeoutId = setTimeout(() => {
+      verification.style.display = 'none';
+      emailLink.textContent = email();
+      emailLink.href = 'mailto:' + email();
+      result.style.display = 'block';
+    }, 850);
+  });
+  copy.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(email());
+      copy.textContent = 'COPIED!';
+      setTimeout(() => { copy.textContent = 'COPY EMAIL'; }, 1800);
+    } catch (_) {
+      copy.textContent = 'USE EMAIL LINK ABOVE';
+    }
+  });
+})();
+</script>
